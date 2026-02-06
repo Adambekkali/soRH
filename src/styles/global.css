@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+    --color-so-forest: #004732;
+    --color-so-emerald: #00a86b;
+    --color-so-light: #f8faf9;
+}
+
+/* Ton scroll-snap pour l'effet 100vh */
+.snap-container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+}

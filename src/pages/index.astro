@@ -1,11 +1,95 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ContactForm from '../components/ContactForm.vue';
+import soRHLogo from '../assets/soRh.jpeg';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="SO RH | Votre Partenaire Paie">
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-so-forest/10 px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <a href="#home" class="block">
+                <img
+                        src={soRHLogo.src}
+                        alt="Logo SO RH"
+                        class="h-8 md:h-12 w-auto object-contain transition-transform hover:scale-105"
+                />
+            </a>
+        </div>
+
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-so-forest">
+            <a href="#expertise" class="hover:text-so-emerald transition">Notre Expertise</a>
+            <a href="#why" class="hover:text-so-emerald transition">Pourquoi Nous ?</a>
+            <a href="#contact" class="bg-so-emerald text-white px-5 py-2 rounded-full hover:bg-so-forest transition shadow-md shadow-so-emerald/20">
+                Demander un devis
+            </a>
+        </div>
+
+        <div class="md:hidden text-so-forest">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </div>
+    </nav>
+
+    <main class="snap-container">
+        <section id="home" class="flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight text-so-forest">
+                L'excellence en <br/><span class="text-so-emerald italic">Gestion de paie.</span>
+            </h1>
+            <p class="max-w-xl text-lg text-slate-600 mb-10">
+                Votre partenaire stratégique pour la gestion RH et de la paie. Des solutions expertes adaptées aux entreprises modernes.
+            </p>
+            <a href="#expertise" class="animate-bounce text-so-forest mt-10 text-3xl">↓</a>
+        </section>
+
+        <section id="expertise" class="bg-white flex items-center justify-center">
+            <div class="max-w-6xl mx-auto px-8 w-full">
+                <h2 class="text-4xl font-bold mb-16 text-center text-so-forest">Notre Expertise</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    {[
+                        {t: "Gestion Intégrale", d: "Calcul précis et livraison rapide de vos bulletins de paie."},
+                        {t: "Déclarations DSN", d: "Gestion complète de toutes vos déclarations sociales (URSSAF, etc.)."},
+                        {t: "Gestion RH", d: "Administration des contrats, des intégrations et des départs."},
+                        {t: "Audits & Conseil", d: "Garantie d'une conformité légale totale pour votre sérénité."}
+                    ].map(item => (
+                            <div class="p-8 rounded-3xl border border-so-light bg-so-light hover:border-so-emerald transition-all duration-300 group">
+                                <div class="w-10 h-10 bg-so-emerald rounded-lg mb-6 group-hover:scale-110 transition"></div>
+                                <h3 class="font-bold text-xl mb-4 leading-tight text-so-forest">{item.t}</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed">{item.d}</p>
+                            </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section id="why" class="flex items-center justify-center bg-so-forest text-white">
+            <div class="max-w-4xl px-8 text-center">
+                <h2 class="text-5xl font-bold mb-8 italic">L'avantage SO RH</h2>
+                <div class="space-y-12">
+                    <div class="flex items-center gap-6 text-left">
+                        <span class="text-4xl text-so-emerald font-bold italic">01.</span>
+                        <p class="text-xl font-medium">Un gestionnaire dédié qui connaît personnellement votre entreprise.</p>
+                    </div>
+                    <div class="flex items-center gap-6 text-left">
+                        <span class="text-4xl text-so-emerald font-bold italic">02.</span>
+                        <p class="text-xl font-medium">Une technologie de pointe assurant l'accès à vos données 24h/24.</p>
+                    </div>
+                    <div class="flex items-center gap-6 text-left">
+                        <span class="text-4xl text-so-emerald font-bold italic">03.</span>
+                        <p class="text-xl font-medium">Réponse garantie sous 24 heures pour toutes vos questions RH.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="flex items-center justify-center bg-white">
+            <div class="w-full max-w-2xl px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4 text-so-forest">Parlons-en.</h2>
+                    <p class="text-slate-500">Prêt à simplifier votre gestion sociale ? Contactez-nous dès aujourd'hui.</p>
+                </div>
+                <ContactForm client:load />
+            </div>
+        </section>
+    </main>
 </Layout>
