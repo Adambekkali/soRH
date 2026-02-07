@@ -11,7 +11,7 @@ import soRHLogo from '../assets/soRh.jpeg';
                 <img
                         src={soRHLogo.src}
                         alt="Logo SO RH"
-                        class="h-8 md:h-12 w-auto object-contain transition-transform hover:scale-105"
+                        class="h-18 md:h-28 w-auto object-contain transition-transform hover:scale-105"
                 />
             </a>
         </div>
@@ -33,29 +33,58 @@ import soRHLogo from '../assets/soRh.jpeg';
 
     <main class="snap-container">
         <section id="home" class="flex flex-col justify-center items-center text-center px-4">
-            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight text-so-forest">
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight text-so-forest pt-20 md:pt-0">
                 L'excellence en <br/><span class="text-so-emerald italic">Gestion de paie.</span>
             </h1>
-            <p class="max-w-xl text-lg text-slate-600 mb-10">
+            <p class="max-w-xl text-base md:text-lg text-slate-600 mb-6 md:mb-10">
                 Votre partenaire stratégique pour la gestion RH et de la paie. Des solutions expertes adaptées aux entreprises modernes.
             </p>
-            <a href="#expertise" class="animate-bounce text-so-forest mt-10 text-3xl">↓</a>
+            <a href="#expertise" class="animate-bounce text-so-forest mt-16 md:mt-10 text-3xl">↓</a>
         </section>
 
-        <section id="expertise" class="bg-white flex items-center justify-center">
-            <div class="max-w-6xl mx-auto px-8 w-full">
-                <h2 class="text-4xl font-bold mb-16 text-center text-so-forest">Notre Expertise</h2>
-                <div class="grid md:grid-cols-4 gap-8">
+        <section id="expertise" class="bg-white flex flex-col items-center justify-start md:justify-center min-h-screen">
+            <div class="max-w-6xl mx-auto px-4 w-full pt-24 md:pt-0">
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-16 text-center text-so-forest">
+                    Notre Expertise
+                </h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
                     {[
-                        {t: "Gestion Intégrale", d: "Calcul précis et livraison rapide de vos bulletins de paie."},
-                        {t: "Déclarations DSN", d: "Gestion complète de toutes vos déclarations sociales (URSSAF, etc.)."},
-                        {t: "Gestion RH", d: "Administration des contrats, des intégrations et des départs."},
-                        {t: "Audits & Conseil", d: "Garantie d'une conformité légale totale pour votre sérénité."}
+                        {
+                            t: "Gestion Intégrale",
+                            d: "Calcul précis et livraison de vos bulletins.",
+                            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>`
+                        },
+                        {
+                            t: "Déclarations DSN",
+                            d: "Gestion complète URSSAF et organismes.",
+                            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="m9.07 14.43 4.9 4.9a2 2 0 0 0 3.1-.1l3.9-4.8"/></svg>`
+                        },
+                        {
+                            t: "Gestion RH",
+                            d: "Contrats, entrées et sorties de salariés.",
+                            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
+                        },
+                        {
+                            t: "Audits & Conseil",
+                            d: "Conformité légale et sérénité totale.",
+                            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+                        }
                     ].map(item => (
-                            <div class="p-8 rounded-3xl border border-so-light bg-so-light hover:border-so-emerald transition-all duration-300 group">
-                                <div class="w-10 h-10 bg-so-emerald rounded-lg mb-6 group-hover:scale-110 transition"></div>
-                                <h3 class="font-bold text-xl mb-4 leading-tight text-so-forest">{item.t}</h3>
-                                <p class="text-sm text-slate-600 leading-relaxed">{item.d}</p>
+                            <div class="aspect-square p-4 md:p-8 rounded-2xl border border-so-light bg-so-light hover:border-so-emerald hover:bg-white hover:shadow-xl hover:shadow-so-emerald/5 transition-all duration-500 group flex flex-col items-center justify-center text-center">
+
+                                {/* L'icône est maintenant injectée via set:html */}
+                                <div class="text-so-emerald mb-3 md:mb-6 group-hover:scale-110 transition-transform duration-300" set:html={item.icon}>
+                                </div>
+
+                                <h3 class="font-bold text-xs md:text-lg mb-1 md:mb-4 leading-tight text-so-forest uppercase tracking-wider">
+                                    {item.t}
+                                </h3>
+
+                                <p class="hidden md:block text-sm text-slate-500 leading-relaxed">
+                                    {item.d}
+                                </p>
                             </div>
                     ))}
                 </div>
@@ -64,19 +93,19 @@ import soRHLogo from '../assets/soRh.jpeg';
 
         <section id="why" class="flex items-center justify-center bg-so-forest text-white">
             <div class="max-w-4xl px-8 text-center">
-                <h2 class="text-5xl font-bold mb-8 italic">L'avantage SO RH</h2>
-                <div class="space-y-12">
-                    <div class="flex items-center gap-6 text-left">
-                        <span class="text-4xl text-so-emerald font-bold italic">01.</span>
-                        <p class="text-xl font-medium">Un gestionnaire dédié qui connaît personnellement votre entreprise.</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 italic">L'avantage SO RH</h2>
+                <div class="space-y-10 md:space-y-12">
+                    <div class="flex items-center gap-4 md:gap-6 text-left">
+                        <span class="text-3xl md:text-4xl text-so-emerald font-bold italic">01.</span>
+                        <p class="text-lg md:text-xl font-medium">Un gestionnaire dédié qui connaît personnellement votre entreprise.</p>
                     </div>
-                    <div class="flex items-center gap-6 text-left">
-                        <span class="text-4xl text-so-emerald font-bold italic">02.</span>
-                        <p class="text-xl font-medium">Une technologie de pointe assurant l'accès à vos données 24h/24.</p>
+                    <div class="flex items-center gap-4 md:gap-6 text-left">
+                        <span class="text-3xl md:text-4xl text-so-emerald font-bold italic">02.</span>
+                        <p class="text-lg md:text-xl font-medium">Une technologie de pointe assurant l'accès à vos données 24h/24.</p>
                     </div>
-                    <div class="flex items-center gap-6 text-left">
-                        <span class="text-4xl text-so-emerald font-bold italic">03.</span>
-                        <p class="text-xl font-medium">Réponse garantie sous 24 heures pour toutes vos questions RH.</p>
+                    <div class="flex items-center gap-4 md:gap-6 text-left">
+                        <span class="text-3xl md:text-4xl text-so-emerald font-bold italic">03.</span>
+                        <p class="text-lg md:text-xl font-medium">Réponse garantie sous 24 heures pour toutes vos questions RH.</p>
                     </div>
                 </div>
             </div>
@@ -84,8 +113,8 @@ import soRHLogo from '../assets/soRh.jpeg';
 
         <section id="contact" class="flex items-center justify-center bg-white">
             <div class="w-full max-w-2xl px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold mb-4 text-so-forest">Parlons-en.</h2>
+                <div class="text-center mb-10 md:mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-so-forest">Parlons-en.</h2>
                     <p class="text-slate-500">Prêt à simplifier votre gestion sociale ? Contactez-nous dès aujourd'hui.</p>
                 </div>
                 <ContactForm client:load />
