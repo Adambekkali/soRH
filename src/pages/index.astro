@@ -1,82 +1,103 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Expertise from '../components/Expertise.vue';
 import ContactForm from '../components/ContactForm.vue';
 import soRHLogo from '../assets/soRH.jpeg';
-import Expertise from '../components/Expertise.vue'; // On importe le nouveau composant
 ---
 
-
-
-<Layout title="SO RH | Votre Partenaire Paie">
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-so-forest/10 px-6 py-3 flex justify-between items-center">
+<Layout title="So.RH | Votre Partenaire Paie & RH">
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-[#004732]/10 px-6 py-3 flex justify-between items-center">
         <div class="flex items-center gap-2">
             <a href="#home" class="block">
                 <img
                         src={soRHLogo.src}
-                        alt="Logo SO RH"
-                        class="h-18 md:h-28 w-auto object-contain transition-transform hover:scale-105"
+                        alt="Logo So.RH"
+                        class="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105"
                 />
             </a>
         </div>
-
-        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-so-forest">
-            <a href="#expertise" class="hover:text-so-emerald transition">Notre Expertise</a>
-            <a href="#why" class="hover:text-so-emerald transition">Pourquoi Nous ?</a>
-            <a href="#contact" class="bg-so-emerald text-white px-5 py-2 rounded-full hover:bg-so-forest transition shadow-md shadow-so-emerald/20">
-                Demander un devis
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-[#004732]">
+            <a href="#expertise" class="hover:text-[#00a86b] transition">Nos Services</a>
+            <a href="#why" class="hover:text-[#00a86b] transition">L'Approche So.RH</a>
+            <a href="#contact" class="bg-[#00a86b] text-white px-5 py-2 rounded-full hover:bg-[#004732] transition shadow-md shadow-[#00a86b]/20">
+                Contactez-nous
             </a>
         </div>
-
-        <div class="md:hidden text-so-forest">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="md:hidden text-[#004732]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </div>
     </nav>
 
     <main class="snap-container">
-        <section id="home" class="flex flex-col justify-center items-center text-center px-4">
-            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight text-so-forest pt-20 md:pt-0">
-                L'excellence en <br/><span class="text-so-emerald italic">Gestion de paie.</span>
+        <section id="home" class="flex flex-col justify-center items-center text-center px-4 min-h-screen">
+            <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight text-[#004732] pt-20 md:pt-0">
+                La Paie et les RH, <br/>
+                <span class="text-[#00a86b] italic">sans le stress.</span>
             </h1>
-            <p class="max-w-xl text-base md:text-lg text-slate-600 mb-6 md:mb-10">
-                Votre partenaire stratégique pour la gestion RH et de la paie. Des solutions expertes adaptées aux entreprises modernes.
+
+            <p class="max-w-2xl text-base md:text-xl text-slate-600 mb-8 md:mb-12 leading-relaxed">
+                Gérer une entreprise, c’est prendre des décisions chaque jour.
+                <strong class="text-[#004732]">So.RH</strong> accompagne les dirigeants de TPE/PME pour sécuriser vos obligations et faire de vos RH un <span class="text-[#00a86b] font-bold">levier de croissance</span>, pas une contrainte.
             </p>
-            <a href="#expertise" class="animate-bounce text-so-forest mt-16 md:mt-10 text-3xl">↓</a>
+
+            <div class="flex flex-col md:flex-row gap-4">
+                <a href="#contact" class="bg-[#004732] text-white text-lg px-8 py-4 rounded-full font-bold hover:bg-[#00a86b] transition shadow-xl">
+                    Parler à un expert
+                </a>
+                <a href="#expertise" class="text-[#004732] text-lg px-8 py-4 rounded-full font-bold border border-[#004732] hover:bg-[#f8faf9] transition">
+                    Découvrir nos services
+                </a>
+            </div>
         </section>
 
-        <Layout title="SO RH | Expertise">
-            <section id="expertise" class="bg-white flex flex-col items-center justify-start md:justify-center min-h-screen">
-                <Expertise client:load />
-            </section>
+        <section id="expertise" class="bg-white flex flex-col items-center justify-start md:justify-center min-h-screen relative">
+            <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#00a86b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <Expertise client:load />
+        </section>
 
-        </Layout>
+        <section id="why" class="flex items-center justify-center bg-[#004732] text-white min-h-screen">
+            <div class="max-w-5xl px-8 py-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 italic">Bien plus qu'un prestataire</h2>
+                <p class="text-xl text-white/80 mb-16 max-w-3xl mx-auto">
+                    Nous sommes votre interlocuteur de confiance. Réactifs et disponibles, nous adaptons nos solutions à <strong>votre réalité</strong>.
+                </p>
 
-        <section id="why" class="flex items-center justify-center bg-so-forest text-white">
-            <div class="max-w-4xl px-8 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-8 italic">L'avantage SO RH</h2>
-                <div class="space-y-10 md:space-y-12">
-                    <div class="flex items-center gap-4 md:gap-6 text-left">
-                        <span class="text-3xl md:text-4xl text-so-emerald font-bold italic">01.</span>
-                        <p class="text-lg md:text-xl font-medium">Un gestionnaire dédié qui connaît personnellement votre entreprise.</p>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-left space-y-4">
+                        <div class="text-[#00a86b] text-5xl font-black opacity-30">01</div>
+                        <h3 class="text-2xl font-bold">Fiabilité Absolue</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            Des paies justes, conformes et régulières. Nous prenons en charge la complexité réglementaire pour vous offrir la <strong class="text-[#00a86b]">tranquillité d'esprit</strong>.
+                        </p>
                     </div>
-                    <div class="flex items-center gap-4 md:gap-6 text-left">
-                        <span class="text-3xl md:text-4xl text-so-emerald font-bold italic">02.</span>
-                        <p class="text-lg md:text-xl font-medium">Une technologie de pointe assurant l'accès à vos données 24h/24.</p>
+                    <div class="text-left space-y-4">
+                        <div class="text-[#00a86b] text-5xl font-black opacity-30">02</div>
+                        <h3 class="text-2xl font-bold">Proximité & Écoute</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            Chaque entreprise est unique. Nous analysons votre organisation pour vous apporter des conseils clairs et des <strong class="text-[#00a86b]">décisions sécurisées</strong>.
+                        </p>
                     </div>
-                    <div class="flex items-center gap-4 md:gap-6 text-left">
-                        <span class="text-3xl md:text-4xl text-so-emerald font-bold italic">03.</span>
-                        <p class="text-lg md:text-xl font-medium">Réponse garantie sous 24 heures pour toutes vos questions RH.</p>
+                    <div class="text-left space-y-4">
+                        <div class="text-[#00a86b] text-5xl font-black opacity-30">03</div>
+                        <h3 class="text-2xl font-bold">Vision Stratégique</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            Nous ne faisons pas que produire de la paie. Nous vous aidons à anticiper et à transformer vos RH en véritable <strong class="text-[#00a86b]">atout concurrentiel</strong>.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="flex items-center justify-center bg-white">
-            <div class="w-full max-w-2xl px-8">
+        <section id="contact" class="flex items-center justify-center bg-white min-h-screen">
+            <div class="w-full max-w-2xl px-8 py-16">
                 <div class="text-center mb-10 md:mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-so-forest">Parlons-en.</h2>
-                    <p class="text-slate-500">Prêt à simplifier votre gestion sociale ? Contactez-nous dès aujourd'hui.</p>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-[#004732]">Un projet ? Une question ?</h2>
+                    <p class="text-slate-500 text-lg">
+                        Ne restez pas seul face à vos obligations sociales.<br/>
+                        Discutons de vos besoins, sans engagement.
+                    </p>
                 </div>
                 <ContactForm client:load />
             </div>
