@@ -4,85 +4,107 @@ import Expertise from '../components/Expertise.vue';
 import ContactForm from '../components/ContactForm.vue';
 import soRHLogo from '../assets/soRH.jpeg';
 ---
-
 <Layout title="So.RH | Votre Partenaire Paie & RH">
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-[#004732]/10 px-6 py-3 flex justify-between items-center">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#004732]/10 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center transition-all duration-300">
         <div class="flex items-center gap-2">
             <a href="#home" class="block">
                 <img
                         src={soRHLogo.src}
                         alt="Logo So.RH"
-                        class="h-20 md:h-28 w-auto object-contain transition-transform hover:scale-105"
+                        class="h-12 md:h-16 lg:h-20 w-auto object-contain transition-transform hover:scale-105"
                 />
             </a>
         </div>
+
         <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-[#004732]">
-            <a href="#expertise" class="hover:text-[#00a86b] transition">Nos Services</a>
-            <a href="#why" class="hover:text-[#00a86b] transition">L'Approche So.RH</a>
+            <a href="#expertise" class="hover:text-[#00a86b] transition py-2">Nos Services</a>
+            <a href="#why" class="hover:text-[#00a86b] transition py-2">L'Approche So.RH</a>
             <a href="#contact" class="bg-[#00a86b] text-white px-5 py-2 rounded-full hover:bg-[#004732] transition shadow-md shadow-[#00a86b]/20">
                 Contactez-nous
             </a>
         </div>
+
         <div class="md:hidden text-[#004732]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </div>
     </nav>
 
-    <main class="snap-container">
-        <section id="home" class="flex flex-col justify-center items-center text-center px-4 min-h-screen">
-            <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight text-[#004732] pt-20 md:pt-0">
+    <main class="
+        flex flex-col gap-16 overflow-x-hidden pb-16 bg-white
+        md:block md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth md:gap-0 md:pb-0
+    ">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="
+            w-full flex flex-col justify-center items-center text-center px-6 pt-24 pb-8 min-h-[85vh]
+            md:h-screen md:snap-start md:pt-0 md:pb-0 md:px-8
+        ">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6 leading-tight text-[#004732]">
                 La Paie et les RH, <br/>
                 <span class="text-[#00a86b] italic">sans le stress.</span>
             </h1>
 
-            <p class="max-w-2xl text-base md:text-xl text-slate-600 mb-8 md:mb-12 leading-relaxed">
-                Gérer une entreprise, c’est prendre des décisions chaque jour.
+            <p class="max-w-2xl text-sm sm:text-base md:text-xl text-slate-600 mb-6 md:mb-12 leading-relaxed px-2">
+                Gérer une entreprise, c'est prendre des décisions chaque jour.
                 <strong class="text-[#004732]">So.RH</strong> accompagne les dirigeants de TPE/PME pour sécuriser vos obligations et faire de vos RH un <span class="text-[#00a86b] font-bold">levier de croissance</span>, pas une contrainte.
             </p>
 
-            <div class="flex flex-col md:flex-row gap-4">
-                <a href="#contact" class="bg-[#004732] text-white text-lg px-8 py-4 rounded-full font-bold hover:bg-[#00a86b] transition shadow-xl">
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4 w-full max-w-md md:max-w-none md:w-auto px-4 md:px-0">
+                <a href="#contact" class="bg-[#004732] text-white text-base md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-[#00a86b] transition shadow-xl w-full md:w-auto text-center">
                     Parler à un expert
                 </a>
-                <a href="#expertise" class="text-[#004732] text-lg px-8 py-4 rounded-full font-bold border border-[#004732] hover:bg-[#f8faf9] transition">
+                <a href="#expertise" class="text-[#004732] text-base md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-full font-bold border-2 border-[#004732] hover:bg-[#f8faf9] transition w-full md:w-auto text-center">
                     Découvrir nos services
                 </a>
             </div>
         </section>
 
-        <section id="expertise" class="bg-white flex flex-col items-center justify-start md:justify-center min-h-screen relative">
+        <!-- EXPERTISE SECTION -->
+        <section id="expertise" class="
+            w-full bg-white flex flex-col items-center justify-center relative py-12 px-4 min-h-screen
+            md:h-screen md:snap-start md:py-0 md:px-8
+        ">
             <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#00a86b_1px,transparent_1px)] [background-size:16px_16px]"></div>
             <Expertise client:load />
         </section>
 
-        <section id="why" class="flex items-center justify-center bg-[#004732] text-white min-h-screen">
-            <div class="max-w-5xl px-8 py-16 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 italic">Bien plus qu'un prestataire</h2>
-                <p class="text-xl text-white/80 mb-16 max-w-3xl mx-auto">
-                    Nous sommes votre interlocuteur de confiance. Réactifs et disponibles, nous adaptons nos solutions à <strong>votre réalité</strong>.
-                </p>
+        <!-- WHY SECTION -->
+        <section id="why" class="
+            w-full bg-[#004732] text-white flex items-center justify-center py-12 px-4 min-h-screen
+            md:h-screen md:snap-start md:py-0 md:px-8
+        ">
+            <div class="max-w-5xl w-full">
+                <div class="text-center mb-8 md:mb-16">
+                    <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 italic">
+                        Bien plus qu'un prestataire
+                    </h2>
+                    <p class="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto px-2">
+                        Nous sommes votre interlocuteur de confiance. Réactifs et disponibles, nous adaptons nos solutions à <strong>votre réalité</strong>.
+                    </p>
+                </div>
 
-                <div class="grid md:grid-cols-3 gap-12">
-                    <div class="text-left space-y-4">
-                        <div class="text-[#00a86b] text-5xl font-black opacity-30">01</div>
-                        <h3 class="text-2xl font-bold">Fiabilité Absolue</h3>
-                        <p class="text-white/80 leading-relaxed">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+                    <div class="text-left space-y-2 md:space-y-3 px-2">
+                        <div class="text-[#00a86b] text-4xl md:text-5xl font-black opacity-30">01</div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold">Fiabilité Absolue</h3>
+                        <p class="text-white/80 leading-relaxed text-sm sm:text-base">
                             Des paies justes, conformes et régulières. Nous prenons en charge la complexité réglementaire pour vous offrir la <strong class="text-[#00a86b]">tranquillité d'esprit</strong>.
                         </p>
                     </div>
-                    <div class="text-left space-y-4">
-                        <div class="text-[#00a86b] text-5xl font-black opacity-30">02</div>
-                        <h3 class="text-2xl font-bold">Proximité & Écoute</h3>
-                        <p class="text-white/80 leading-relaxed">
+                    <div class="text-left space-y-2 md:space-y-3 px-2">
+                        <div class="text-[#00a86b] text-4xl md:text-5xl font-black opacity-30">02</div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold">Proximité & Écoute</h3>
+                        <p class="text-white/80 leading-relaxed text-sm sm:text-base">
                             Chaque entreprise est unique. Nous analysons votre organisation pour vous apporter des conseils clairs et des <strong class="text-[#00a86b]">décisions sécurisées</strong>.
                         </p>
                     </div>
-                    <div class="text-left space-y-4">
-                        <div class="text-[#00a86b] text-5xl font-black opacity-30">03</div>
-                        <h3 class="text-2xl font-bold">Vision Stratégique</h3>
-                        <p class="text-white/80 leading-relaxed">
+                    <div class="text-left space-y-2 md:space-y-3 px-2">
+                        <div class="text-[#00a86b] text-4xl md:text-5xl font-black opacity-30">03</div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold">Vision Stratégique</h3>
+                        <p class="text-white/80 leading-relaxed text-sm sm:text-base">
                             Nous ne faisons pas que produire de la paie. Nous vous aidons à anticiper et à transformer vos RH en véritable <strong class="text-[#00a86b]">atout concurrentiel</strong>.
                         </p>
                     </div>
@@ -90,12 +112,18 @@ import soRHLogo from '../assets/soRH.jpeg';
             </div>
         </section>
 
-        <section id="contact" class="flex items-center justify-center bg-white min-h-screen">
-            <div class="w-full max-w-2xl px-8 py-16">
-                <div class="text-center mb-10 md:mb-12">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-[#004732]">Un projet ? Une question ?</h2>
-                    <p class="text-slate-500 text-lg">
-                        Ne restez pas seul face à vos obligations sociales.<br/>
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="
+            w-full bg-white flex items-center justify-center py-12 px-4 min-h-screen
+            md:h-screen md:snap-start md:py-0 md:px-8
+        ">
+            <div class="w-full max-w-2xl">
+                <div class="text-center mb-8 md:mb-12 px-2">
+                    <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-6 text-[#004732]">
+                        Un projet ? Une question ?
+                    </h2>
+                    <p class="text-slate-500 text-sm sm:text-base md:text-lg">
+                        Ne restez pas seul face à vos obligations sociales.<br class="hidden sm:block"/>
                         Discutons de vos besoins, sans engagement.
                     </p>
                 </div>
