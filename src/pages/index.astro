@@ -6,13 +6,12 @@ import soRHLogo from '../assets/soRH.jpeg';
 import background_section1 from '../assets/background_section1.jpg';
 import background_section2 from '../assets/background_section2.jpg';
 import background_section3 from '../assets/background_section3.jpg';
-
 ---
 
 <Layout title="SO RH EXPERT | Paie & Conseil RH Premium">
 
     <!-- NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-[#004732]/10 px-6 py-4 flex justify-between items-center transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-[#004732]/10 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center transition-all duration-300">
         <div class="flex items-center gap-2">
             <a href="#home" class="block">
                 <img
@@ -32,167 +31,166 @@ import background_section3 from '../assets/background_section3.jpg';
             </a>
         </div>
 
-        <div class="md:hidden text-[#004732]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <!-- Menu Mobile Icon -->
+        <div class="md:hidden text-[#004732] p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </div>
     </nav>
 
     <!-- MAIN CONTAINER HYBRIDE -->
+    <!-- FIX : Suppression du gap-24 sur mobile pour éviter les trous blancs -->
     <main class="
-        flex flex-col gap-24 overflow-x-hidden bg-white
-        md:block md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth md:gap-0
+        flex flex-col overflow-x-hidden bg-white
+        md:block md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth
     ">
 
-        <!-- SECTION 1 : HERO (Élégant & Rassurant) -->
+        <!-- SECTION 1 : HERO -->
+        <!-- FIX : min-h-[100svh] pour prendre tout l'écran mobile proprement, pt-24 pour éviter la barre de nav -->
         <section id="home" class="
              relative bg-cover bg-center bg-no-repeat
-            w-full flex flex-col justify-center items-center text-center px-4 pt-40 pb-10
-            md:h-screen md:snap-start md:pt-0 md:p-0 md:pb-0"
+            w-full flex flex-col justify-center items-center text-center px-4 pt-28 pb-12 min-h-[100svh]
+            md:h-screen md:min-h-screen md:snap-start md:pt-0 md:p-0 md:pb-0"
                  style={`background-image: url('${background_section1.src}');`}
         >
 
-            <!-- Le filtre de la Section 1 -->
             <div class="absolute inset-0 bg-white/45 backdrop-blur-[2px] z-0"></div>
 
-            <div class="relative z-10 max-w-4xl mx-auto">
-                <h1 class="text-3xl md:text-6xl font-bold mb-8 leading-tight text-[#004732] tracking-tight">
+            <div class="relative z-10 max-w-4xl mx-auto w-full">
+                <!-- FIX : Tailles de textes ajustées (text-3xl) et 'break-words' pour empêcher le mot "Externalisation" de casser l'écran -->
+                <h1 class="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-[#004732] tracking-tight break-words">
                     Externalisation de la paie & conseil RH <br class="hidden md:block"/>
                     <span class="text-[#00a86b] font-light italic">pour entreprises exigeantes.</span>
                 </h1>
 
-                <p class="text-base md:text-xl text-slate-800 mb-10 md:mb-14 leading-relaxed max-w-3xl mx-auto font-normal">
+                <!-- FIX : Texte réduit sur mobile (text-sm/base) pour plus de légèreté -->
+                <p class="text-base md:text-xl text-slate-800 mb-8 md:mb-14 leading-relaxed max-w-3xl mx-auto font-normal px-2">
                     <strong class="text-[#004732] font-bold">SO RH EXPERT</strong> accompagne dirigeants, PME et structures en croissance dans une gestion sociale fiable, confidentielle et parfaitement maîtrisée.
                 </p>
 
-                <div class="flex flex-col md:flex-row justify-center gap-4 w-full md:w-auto px-6 md:px-0">
-                    <a href="#contact" class="bg-[#004732] text-white text-base md:text-lg px-8 py-4 rounded-full font-semibold hover:bg-[#00a86b] hover:shadow-lg transition duration-300 w-full md:w-auto block text-center shadow-md shadow-[#004732]/10">
+                <div class="flex flex-col md:flex-row justify-center gap-3 md:gap-4 w-full md:w-auto px-2 md:px-0">
+                    <a href="#contact" class="bg-[#004732] text-white text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-semibold hover:bg-[#00a86b] hover:shadow-lg transition duration-300 w-full md:w-auto block text-center shadow-md shadow-[#004732]/10">
                         Demander un accompagnement
                     </a>
-                    <a href="#positionnement" class="text-[#004732] text-base md:text-lg px-8 py-4 rounded-full font-medium border border-[#004732]/30 hover:bg-[#f8faf9] transition w-full md:w-auto">
+                    <a href="#positionnement" class="text-[#004732] text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-medium border border-[#004732]/30 hover:bg-[#f8faf9] transition w-full md:w-auto block text-center">
                         Découvrir notre expertise
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2 : POSITIONNEMENT (Ton Premium) -->
+        <!-- SECTION 2 : POSITIONNEMENT -->
+        <!-- FIX : py-16 sur mobile au lieu de py-20 pour ne pas étouffer le contenu -->
         <section id="positionnement" class="
-        bg-center bg-cover bg-no-repeat relative
-        w-full flex items-center justify-center py-20 px-4
-        md:h-screen md:snap-start md:py-0"
+            bg-center bg-cover bg-no-repeat relative
+            w-full flex items-center justify-center py-16 md:py-20 px-4
+            md:h-screen md:snap-start md:py-0"
                  style={`background-image: url('${background_section2.src}');`}
         >
-            <!-- FIX 1 : Filtre blanc renforcé à 85% d'opacité via les crochets -->
             <div class="absolute inset-0 bg-white/35 backdrop-blur-[2px] z-0"></div>
 
-            <div class="max-w-4xl mx-auto text-center relative z-10">
-                <span class="text-[#00a86b] font-bold tracking-widest uppercase text-sm mb-4 block">Notre Philosophie</span>
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-[#004732] leading-tight">Une expertise au service <br/>de votre sérénité.</h2>
+            <div class="max-w-4xl mx-auto text-center relative z-10 w-full">
+                <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4 block">Notre Philosophie</span>
+                <h2 class="text-2xl md:text-5xl font-bold mb-6 md:mb-8 text-[#004732] leading-tight">Une expertise au service <br/>de votre sérénité.</h2>
 
-                <!-- FIX 2 : Texte plus sombre (slate-800) et légèrement plus épais (font-medium) -->
-                <p class="text-lg text-slate-800 leading-relaxed mb-12 font-medium">
+                <p class="text-base md:text-lg text-slate-800 leading-relaxed mb-10 md:mb-12 font-medium">
                     La gestion de la paie et des obligations sociales exige rigueur, précision et parfaite maîtrise du cadre légal. <strong class="text-[#004732] font-bold">SO RH EXPERT</strong> vous apporte une solution complète, sécurisée et sur mesure.
                 </p>
 
-                <div class="grid md:grid-cols-3 gap-8 text-left">
-                    <!-- FIX 3 : Ombres plus prononcées (shadow-md) et texte affiné (slate-700) dans les cartes -->
-                    <div class="p-6 bg-white rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition-shadow duration-300">
-                        <div class="text-[#00a86b] text-2xl mb-4 font-bold">✓</div>
-                        <h3 class="font-bold text-[#004732] mb-2 text-lg">Accompagnement Pro</h3>
-                        <p class="text-sm text-slate-700 leading-relaxed">Un suivi dédié et professionnel à chaque étape.</p>
+                <!-- FIX : gap-4 sur mobile, gap-8 sur pc -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 text-left">
+                    <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
+                        <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
+                        <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Accompagnement Pro</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Un suivi dédié et professionnel à chaque étape.</p>
                     </div>
 
-                    <div class="p-6 bg-white rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition-shadow duration-300">
-                        <div class="text-[#00a86b] text-2xl mb-4 font-bold">✓</div>
-                        <h3 class="font-bold text-[#004732] mb-2 text-lg">Conformité Garantie</h3>
-                        <p class="text-sm text-slate-700 leading-relaxed">Zéro risque légal, votre entreprise est sécurisée.</p>
+                    <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
+                        <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
+                        <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Conformité Garantie</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Zéro risque légal, votre entreprise est sécurisée.</p>
                     </div>
 
-                    <div class="p-6 bg-white rounded-2xl shadow-md border border-slate-100 hover:shadow-lg transition-shadow duration-300">
-                        <div class="text-[#00a86b] text-2xl mb-4 font-bold">✓</div>
-                        <h3 class="font-bold text-[#004732] mb-2 text-lg">Gain de Temps</h3>
-                        <p class="text-sm text-slate-700 leading-relaxed">Libérez-vous des contraintes pour piloter votre croissance.</p>
+                    <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
+                        <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
+                        <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Gain de Temps</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Libérez-vous des contraintes pour piloter votre croissance.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3 : EXPERTISE (Composant Vue mis à jour) -->
+        <!-- SECTION 3 : EXPERTISE -->
         <section id="expertise" class="
             bg-center bg-cover bg-no-repeat relative
-            w-full bg-white flex flex-col items-center justify-center relative py-10
+            w-full bg-white flex flex-col items-center justify-center py-16 md:py-10
             md:h-screen md:snap-start md:py-0
-
         " style={`background-image: url('${background_section3.src}');`}
         >
             <div class="absolute inset-0 bg-white/45 backdrop-blur-[2px] z-0"></div>
             <Expertise client:load />
         </section>
 
-        <!-- SECTION 4 : LA DIFFÉRENCE & RASSURANCE -->
+        <!-- SECTION 4 : LA DIFFÉRENCE -->
         <section id="why" class="
-            w-full bg-[#004732] text-white flex items-center justify-center py-20 px-4
+            w-full bg-[#004732] text-white flex items-center justify-center py-16 md:py-20 px-4
             md:h-screen md:snap-start md:py-0
         ">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <!-- FIX : gap-10 sur mobile au lieu de 16 -->
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
                 <div>
-                    <span class="text-[#00a86b] font-bold tracking-widest uppercase text-sm mb-4 block">Notre Différence</span>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Pourquoi choisir <br/><span class="italic font-light">SO RH EXPERT ?</span></h2>
-                    <p class="text-white/80 mb-10 font-light text-lg">
+                    <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 block">Notre Différence</span>
+                    <h2 class="text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">Pourquoi choisir <br/><span class="italic font-light">SO RH EXPERT ?</span></h2>
+                    <p class="text-white/80 mb-8 font-light text-base md:text-lg">
                         Dans un environnement réglementaire en constante évolution, vous avez besoin d’un partenaire fiable. Vous n’êtes pas un dossier, vous êtes un client que nous accompagnons dans la durée.
                     </p>
 
-                    <!-- FIX : Espacement augmenté (space-y-6) et texte plus grand/lisible (text-lg md:text-xl font-medium) -->
-                    <ul class="space-y-6 font-medium text-white/95 text-lg md:text-xl">
-
-                        <li class="flex items-start gap-4">
-                            <!-- Nouvelle icône "Check Circle" avec un léger halo lumineux (drop-shadow) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_12px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <ul class="space-y-4 md:space-y-6 font-medium text-white/95 text-base md:text-xl">
+                        <li class="flex items-start gap-3 md:gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_8px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span class="pt-1 md:pt-1.5">Une expertise pointue en paie et droit social</span>
+                            <span class="pt-0.5 md:pt-1.5">Une expertise pointue en paie et droit social</span>
                         </li>
-
-                        <li class="flex items-start gap-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_12px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <li class="flex items-start gap-3 md:gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_8px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span class="pt-1 md:pt-1.5">Une approche personnalisée et sur mesure</span>
+                            <span class="pt-0.5 md:pt-1.5">Une approche personnalisée et sur mesure</span>
                         </li>
-
-                        <li class="flex items-start gap-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_12px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <li class="flex items-start gap-3 md:gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_8px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span class="pt-1 md:pt-1.5">Une grande réactivité face à vos demandes</span>
+                            <span class="pt-0.5 md:pt-1.5">Une grande réactivité face à vos demandes</span>
                         </li>
-
-                        <li class="flex items-start gap-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_12px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <li class="flex items-start gap-3 md:gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-10 md:h-10 text-[#00a86b] flex-shrink-0 drop-shadow-[0_0_8px_rgba(0,168,107,0.4)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <span class="pt-1 md:pt-1.5">Un très haut niveau de confidentialité</span>
+                            <span class="pt-0.5 md:pt-1.5">Un très haut niveau de confidentialité</span>
                         </li>
-
                     </ul>
-                </div>                <div class="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-sm">
-                    <h3 class="text-2xl font-bold mb-6 text-[#00a86b]">Notre engagement</h3>
-                    <div class="space-y-6">
+                </div>
+
+                <!-- FIX : Padding réduit sur mobile (p-6 au lieu de p-8) -->
+                <div class="bg-white/5 p-6 md:p-12 rounded-3xl border border-white/10 backdrop-blur-sm">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#00a86b]">Notre engagement</h3>
+                    <div class="space-y-4 md:space-y-6">
                         <div>
-                            <h4 class="font-bold text-lg">Conformité Légale</h4>
-                            <p class="text-white/70 text-sm">Garantie absolue de la conformité de votre paie.</p>
+                            <h4 class="font-bold text-base md:text-lg">Conformité Légale</h4>
+                            <p class="text-white/70 text-xs md:text-sm">Garantie absolue de la conformité de votre paie.</p>
                         </div>
                         <div class="h-px w-full bg-white/10"></div>
                         <div>
-                            <h4 class="font-bold text-lg">Confidentialité</h4>
-                            <p class="text-white/70 text-sm">Sécurisation totale de vos données sensibles.</p>
+                            <h4 class="font-bold text-base md:text-lg">Confidentialité</h4>
+                            <p class="text-white/70 text-xs md:text-sm">Sécurisation totale de vos données sensibles.</p>
                         </div>
                         <div class="h-px w-full bg-white/10"></div>
                         <div>
-                            <h4 class="font-bold text-lg">Tranquillité</h4>
-                            <p class="text-white/70 text-sm">Un suivi rigoureux. Votre sérénité est notre priorité.</p>
+                            <h4 class="font-bold text-base md:text-lg">Tranquillité</h4>
+                            <p class="text-white/70 text-xs md:text-sm">Un suivi rigoureux. Votre sérénité est notre priorité.</p>
                         </div>
                     </div>
                 </div>
@@ -201,116 +199,109 @@ import background_section3 from '../assets/background_section3.jpg';
 
         <!-- SECTION 5 : CONTACT -->
         <section id="contact" class="
-    w-full bg-white flex items-center justify-center py-20 px-4
-    md:min-h-[80vh] md:snap-start md:py-0
-">
+            w-full bg-white flex items-center justify-center py-16 md:py-20 px-4
+            md:min-h-[80vh] md:snap-start md:py-0
+        ">
             <div class="w-full max-w-2xl px-2">
-                <!-- En-tête Contact -->
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#004732]">Échangeons sur vos besoins</h2>
-                    <p class="text-slate-500 text-base md:text-lg font-light">
+                <div class="text-center mb-8 md:mb-10">
+                    <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-[#004732]">Échangeons sur vos besoins</h2>
+                    <p class="text-slate-500 text-sm md:text-lg font-light">
                         Confiez votre paie à un partenaire de confiance et sécurisez votre gestion sociale.
                     </p>
                 </div>
 
-                <!-- Le Formulaire -->
                 <ContactForm client:load />
 
-                <!-- Le Séparateur "OU" élégant -->
-                <div class="flex items-center my-12">
+                <div class="flex items-center my-10 md:my-12">
                     <div class="flex-grow border-t border-slate-200"></div>
-                    <span class="px-6 text-slate-400 text-xs md:text-sm uppercase tracking-widest font-bold">Ou contactez-nous directement</span>
+                    <span class="px-4 md:px-6 text-slate-400 text-[10px] md:text-sm uppercase tracking-widest font-bold text-center">Ou contactez-nous</span>
                     <div class="flex-grow border-t border-slate-200"></div>
                 </div>
 
-                <!-- Les Coordonnées (Grille 3 colonnes) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
                     <!-- Email -->
                     <div class="flex flex-col items-center group">
-                        <div class="w-12 h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-4 group-hover:bg-[#00a86b] group-hover:text-white transition-all duration-300 shadow-sm border border-slate-100 group-hover:shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Email</h4>
-                        <a href="mailto:contact@sorh-expert.com" class="text-slate-500 hover:text-[#00a86b] transition font-medium text-sm">
+                        <h4 class="text-[#004732] font-bold mb-1 text-xs md:text-sm uppercase tracking-wide">Email</h4>
+                        <a href="mailto:contact@sorh-expert.com" class="text-slate-500 font-medium text-xs md:text-sm">
                             contact@sorh-expert.com
                         </a>
                     </div>
 
                     <!-- Téléphone -->
                     <div class="flex flex-col items-center group">
-                        <div class="w-12 h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-4 group-hover:bg-[#00a86b] group-hover:text-white transition-all duration-300 shadow-sm border border-slate-100 group-hover:shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                         </div>
-                        <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Téléphone</h4>
-                        <a href="tel:+33143450913" class="text-slate-500 hover:text-[#00a86b] transition font-medium text-sm">
+                        <h4 class="text-[#004732] font-bold mb-1 text-xs md:text-sm uppercase tracking-wide">Téléphone</h4>
+                        <a href="tel:+33143450913" class="text-slate-500 font-medium text-xs md:text-sm">
                             +33 1 43 45 09 13
                         </a>
                     </div>
 
-                    <!-- Adresse Postale -->
+                    <!-- Siège Social -->
                     <div class="flex flex-col items-center group">
-                        <div class="w-12 h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-4 group-hover:bg-[#00a86b] group-hover:text-white transition-all duration-300 shadow-sm border border-slate-100 group-hover:shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </div>
-                        <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Siège Social</h4>
-                        <p class="text-slate-500 font-medium text-sm leading-relaxed">
+                        <h4 class="text-[#004732] font-bold mb-1 text-xs md:text-sm uppercase tracking-wide">Siège Social</h4>
+                        <p class="text-slate-500 font-medium text-xs md:text-sm leading-relaxed">
                             74 avenue du Docteur Arnold Netter<br/>
                             75012 Paris
                         </p>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!-- FOOTER : LÉGAL & SEO -->
+        <!-- FIX : py-10 sur mobile, grid-cols-1 au lieu de 2 pour les textes légaux sur petits écrans -->
         <footer class="
-            w-full bg-[#0a1f16] text-white/70 py-16 px-6
+            w-full bg-[#0a1f16] text-white/70 py-12 md:py-16 px-6
             md:snap-start md:flex md:flex-col md:justify-center
         ">
-            <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-24">
+            <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
 
-                <!-- Bloc SEO & Intro -->
                 <div>
-                    <img src={soRHLogo.src} alt="Logo SO RH" class="h-12 mb-6 opacity-80 grayscale" />
-                    <p class="text-sm leading-relaxed text-white/60 font-light mb-6">
+                    <img src={soRHLogo.src} alt="Logo SO RH" class="h-10 md:h-12 mb-4 md:mb-6 opacity-80 grayscale" />
+                    <p class="text-xs md:text-sm leading-relaxed text-white/60 font-light mb-4 md:mb-6">
                         SO RH EXPERT est un cabinet spécialisé dans l’externalisation de la paie et le conseil en ressources humaines. Nous accompagnons les TPE et PME dans la gestion de leurs obligations sociales avec rigueur, fiabilité et confidentialité.
                     </p>
-                    <p class="text-xs text-white/40">© 2026 SO RH EXPERT. Tous droits réservés.</p>
+                    <p class="text-[10px] md:text-xs text-white/40">© 2026 SO RH EXPERT. Tous droits réservés.</p>
                 </div>
 
-                <!-- Bloc Légal -->
                 <div>
-                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6 border-b border-white/10 pb-4">Informations Juridiques</h4>
-                    <div class="grid grid-cols-2 gap-y-4 gap-x-8 text-xs md:text-sm">
+                    <h4 class="text-white font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 border-b border-white/10 pb-3 md:pb-4">Informations Juridiques</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-[11px] md:text-sm">
                         <div>
-                            <span class="text-white/40 block mb-1">Société</span>
+                            <span class="text-white/40 block mb-0.5 md:mb-1">Société</span>
                             <span class="font-medium text-white">SO RH EXPERT</span><br/>
                             <span class="text-white/60">SAS (Société par actions simplifiée)</span>
                         </div>
                         <div>
-                            <span class="text-white/40 block mb-1">Capital social</span>
+                            <span class="text-white/40 block mb-0.5 md:mb-1">Capital social</span>
                             <span class="text-white">10 000,00 €</span>
                         </div>
                         <div>
-                            <span class="text-white/40 block mb-1">SIREN / SIRET (siège)</span>
+                            <span class="text-white/40 block mb-0.5 md:mb-1">SIREN / SIRET (siège)</span>
                             <span class="text-white">880 324 645</span><br/>
                             <span class="text-white/60">880 324 645 00014</span>
                         </div>
                         <div>
-                            <span class="text-white/40 block mb-1">Numéro de TVA</span>
+                            <span class="text-white/40 block mb-0.5 md:mb-1">Numéro de TVA</span>
                             <span class="text-white">FR52880324645</span>
                         </div>
-                        <div class="col-span-2">
-                            <span class="text-white/40 block mb-1">Immatriculation</span>
+                        <div class="col-span-1 sm:col-span-2">
+                            <span class="text-white/40 block mb-0.5 md:mb-1">Immatriculation</span>
                             <span class="text-white">N° RCS : 880 324 645 R.C.S. Paris (06/01/2020)</span><br/>
                             <span class="text-white">Inscription au RNE le 06/01/2020</span>
                         </div>

@@ -1,28 +1,41 @@
 <template>
   <!-- Le conteneur principal -->
-  <div class="max-w-6xl mx-auto px-4 w-full pt-24 md:pt-0 text-center relative z-10">
+  <!-- FIX : pt-12 sur mobile au lieu de pt-24 pour éviter un blanc géant -->
+  <div class="max-w-6xl mx-auto px-4 w-full pt-12 md:pt-0 text-center relative z-10">
     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#004732]">
       Nos Services Clés
     </h2>
-    <p class="text-slate-700 font-medium mb-10 max-w-2xl mx-auto">
+    <p class="text-slate-700 font-medium mb-10 max-w-2xl mx-auto text-sm md:text-base">
       De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="text-[#00a86b] font-bold">levier de performance</strong>.
     </p>
 
-    <!-- FIX : md:grid-cols-3 au lieu de 4. Et grid-cols-1 sur mobile pour un bel alignement -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+    <!-- La Grille -->
+    <!-- FIX : gap-4 sur mobile (plus resserré) et gap-8 sur PC -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 max-w-5xl mx-auto">
       <div
           v-for="(item, index) in expertise"
           :key="index"
           @click="openModal(item)"
-          class="aspect-square md:aspect-auto md:h-64 p-6 rounded-2xl border border-slate-100 bg-white/90 backdrop-blur-sm shadow-md hover:border-[#00a86b] hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative"
+          class="p-6 md:p-8 rounded-3xl border border-slate-100 bg-white/90 backdrop-blur-sm shadow-md hover:border-[#00a86b] hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative h-auto min-h-[250px]"
       >
-        <div class="text-[#00a86b] mb-4 group-hover:scale-110 transition-transform duration-300" v-html="item.icon"></div>
+        <!-- L'icône -->
+        <div class="text-[#00a86b] mb-4 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300" v-html="item.icon"></div>
+
+        <!-- Le Titre -->
         <h3 class="font-bold text-lg uppercase tracking-wider text-[#004732] mb-3">{{ item.title }}</h3>
-        <p class="text-sm text-slate-600 leading-relaxed px-2">
+
+        <!-- La Description -->
+        <p class="text-sm text-slate-600 leading-relaxed px-2 flex-grow">
           {{ item.shortDesc }}
         </p>
-        <span class="text-xs text-white bg-[#004732] px-3 py-1.5 rounded-full font-bold mt-4 shadow-sm">
+
+        <!-- FIX : Le Bouton repensé pour le mobile (plus large, plus facile à cliquer) -->
+        <span class="mt-5 text-xs text-[#004732] border border-[#004732]/20 px-6 py-2.5 rounded-full font-bold uppercase tracking-wider group-hover:bg-[#00a86b] group-hover:text-white group-hover:border-[#00a86b] transition-all duration-300 flex items-center gap-2 bg-white shadow-sm">
           En savoir +
+          <!-- Petite flèche animée -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </span>
       </div>
     </div>
@@ -33,33 +46,37 @@
         <div class="absolute inset-0 bg-[#004732]/80 backdrop-blur-sm" @click="closeModal"></div>
 
         <div class="bg-white rounded-3xl p-6 md:p-8 max-w-2xl w-full shadow-2xl relative z-10 overflow-y-auto max-h-[90vh] border-t-4 border-[#00a86b] flex flex-col">
-          <button @click="closeModal" class="absolute top-4 right-4 text-slate-400 hover:text-[#004732] bg-slate-100 hover:bg-slate-200 rounded-full w-8 h-8 flex items-center justify-center transition">✕</button>
 
-          <div class="flex items-center gap-4 mb-6">
-            <div class="p-3 bg-[#f8faf9] rounded-xl text-[#00a86b]" v-html="selectedItem.icon"></div>
+          <!-- FIX : Bouton de fermeture plus gros sur mobile (w-10 h-10) pour le pouce -->
+          <button @click="closeModal" class="absolute top-4 right-4 text-slate-400 hover:text-[#004732] bg-slate-100 hover:bg-slate-200 rounded-full w-10 h-10 md:w-8 md:h-8 flex items-center justify-center transition">✕</button>
+
+          <div class="flex items-center gap-4 mb-6 pr-8">
+            <div class="p-3 bg-[#f8faf9] rounded-xl text-[#00a86b] flex-shrink-0" v-html="selectedItem.icon"></div>
             <div class="text-left">
               <h3 class="text-xl md:text-2xl font-bold text-[#004732] leading-tight">{{ selectedItem.fullTitle }}</h3>
-              <p class="text-sm text-[#00a86b] font-bold uppercase tracking-wide">Notre engagement</p>
+              <p class="text-xs md:text-sm text-[#00a86b] font-bold uppercase tracking-wide mt-1">Notre engagement</p>
             </div>
           </div>
 
-          <p class="text-slate-700 mb-6 leading-relaxed text-base md:text-lg border-l-4 border-[#00a86b]/40 pl-4 italic text-left">
+          <p class="text-slate-700 mb-6 leading-relaxed text-sm md:text-lg border-l-4 border-[#00a86b]/40 pl-4 italic text-left">
             <span v-html="selectedItem.description"></span>
           </p>
 
-          <div class="bg-[#f8faf9] p-6 rounded-2xl text-left">
-            <h4 class="font-bold text-[#004732] text-sm uppercase tracking-wide mb-4 border-b border-slate-200 pb-2">
+          <div class="bg-[#f8faf9] p-5 md:p-6 rounded-2xl text-left">
+            <h4 class="font-bold text-[#004732] text-xs md:text-sm uppercase tracking-wide mb-4 border-b border-slate-200 pb-2">
               Détail de nos missions :
             </h4>
-            <div class="grid md:grid-cols-2 gap-4">
+            <!-- FIX : La grille des points s'adapte en 1 colonne sur petit mobile, 2 sur PC -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div v-for="point in selectedItem.points" :key="point" class="flex items-start gap-2">
                 <span class="text-[#00a86b] font-bold mt-0.5">✓</span>
-                <span class="text-slate-700 font-medium text-sm md:text-base leading-snug">{{ point }}</span>
+                <span class="text-slate-700 font-medium text-sm leading-snug">{{ point }}</span>
               </div>
             </div>
           </div>
 
-          <button @click="closeModal" class="mt-8 w-full py-4 bg-[#004732] text-white rounded-xl font-bold hover:bg-[#00a86b] transition shadow-lg shadow-[#004732]/20">
+          <!-- FIX : Bouton de fermeture en bas plus épais sur mobile -->
+          <button @click="closeModal" class="mt-8 w-full py-3.5 md:py-4 bg-[#004732] text-white rounded-xl font-bold hover:bg-[#00a86b] transition shadow-lg shadow-[#004732]/20 text-sm md:text-base">
             Fermer la fenêtre
           </button>
         </div>
@@ -67,6 +84,7 @@
     </Transition>
   </div>
 </template>
+
 <script setup>
 import { ref } from 'vue';
 
@@ -124,7 +142,8 @@ const expertise = [
       "Conseil juridique personnalisé"
     ]
   }
-];</script>
+];
+</script>
 
 <style scoped>
 .fade-enter-active, .fade-leave-active { transition: opacity 0.2s ease; }
