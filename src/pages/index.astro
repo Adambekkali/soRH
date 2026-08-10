@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Expertise from '../components/Expertise.vue';
 import ContactForm from '../components/ContactForm.vue';
-import soRHLogo from '../assets/soRH.jpeg';
+import soRHLogo from '../assets/soRH.png';
 import background_section1 from '../assets/background_section1.jpg';
 import background_section2 from '../assets/background_section2.jpg';
 import background_section3 from '../assets/background_section3.jpg';
@@ -25,7 +25,7 @@ import background_section3 from '../assets/background_section3.jpg';
         <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-[#004732]">
             <a href="#positionnement" class="hover:text-[#00a86b] transition py-2">Notre Vision</a>
             <a href="#expertise" class="hover:text-[#00a86b] transition py-2">Services</a>
-            <a href="#why" class="hover:text-[#00a86b] transition py-2">La Différence</a>
+            <a href="#why" class="hover:text-[#00a86b] transition py-2">Notre Différence</a>
             <a href="#contact" class="bg-[#004732] text-white px-6 py-2.5 rounded-full hover:bg-[#00a86b] transition shadow-md">
                 Prendre rendez-vous
             </a>
@@ -55,8 +55,8 @@ import background_section3 from '../assets/background_section3.jpg';
                  style={`background-image: url('${background_section1.src}');`}
         >
 
-            <div class="absolute inset-0 bg-white/45 backdrop-blur-[2px] z-0"></div>
-
+            <!-- FIX : Opacité montée à 85% et flou augmenté pour faire ressortir le texte -->
+            <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
             <div class="relative z-10 max-w-4xl mx-auto w-full">
                 <!-- FIX : Tailles de textes ajustées (text-3xl) et 'break-words' pour empêcher le mot "Externalisation" de casser l'écran -->
                 <h1 class="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-[#004732] tracking-tight break-words">
@@ -88,10 +88,10 @@ import background_section3 from '../assets/background_section3.jpg';
             md:h-screen md:snap-start md:py-0"
                  style={`background-image: url('${background_section2.src}');`}
         >
-            <div class="absolute inset-0 bg-white/35 backdrop-blur-[2px] z-0"></div>
+            <div class="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0"></div>
 
             <div class="max-w-4xl mx-auto text-center relative z-10 w-full">
-                <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4 block">Notre Philosophie</span>
+                <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4 block">Notre Vision</span>
                 <h2 class="text-2xl md:text-5xl font-bold mb-6 md:mb-8 text-[#004732] leading-tight">Une expertise au service <br/>de votre sérénité.</h2>
 
                 <p class="text-base md:text-lg text-slate-800 leading-relaxed mb-10 md:mb-12 font-medium">
@@ -128,8 +128,7 @@ import background_section3 from '../assets/background_section3.jpg';
             md:h-screen md:snap-start md:py-0
         " style={`background-image: url('${background_section3.src}');`}
         >
-            <div class="absolute inset-0 bg-white/45 backdrop-blur-[2px] z-0"></div>
-            <Expertise client:load />
+            <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>            <Expertise client:load />
         </section>
 
         <!-- SECTION 4 : LA DIFFÉRENCE -->
@@ -199,18 +198,18 @@ import background_section3 from '../assets/background_section3.jpg';
 
         <!-- SECTION 5 : CONTACT -->
         <section id="contact" class="
-            w-full bg-white flex items-center justify-center py-16 md:py-20 px-4
-            md:min-h-[80vh] md:snap-start md:py-0
+            w-full bg-white flex items-center justify-center pt-28 pb-16 md:pt-32 md:pb-20 px-4
+            md:min-h-screen md:snap-start scroll-mt-20
         ">
-            <div class="w-full max-w-2xl px-2">
-                <div class="text-center mb-8 md:mb-10">
-                    <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-[#004732]">Échangeons sur vos besoins</h2>
-                    <p class="text-slate-500 text-sm md:text-lg font-light">
-                        Confiez votre paie à un partenaire de confiance et sécurisez votre gestion sociale.
-                    </p>
-                </div>
+        <div class="w-full max-w-2xl px-2">
+            <div class="text-center mb-8 md:mb-10">
+                <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-[#004732]">Échangeons sur vos besoins</h2>
+                <p class="text-slate-500 text-sm md:text-lg font-light">
+                    Confiez votre paie à un partenaire de confiance et sécurisez votre gestion sociale.
+                </p>
+            </div>
 
-                <ContactForm client:load />
+            <ContactForm client:load />
 
                 <div class="flex items-center my-10 md:my-12">
                     <div class="flex-grow border-t border-slate-200"></div>
