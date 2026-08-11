@@ -40,31 +40,25 @@ import background_section3 from '../assets/background_section3.jpg';
     </nav>
 
     <!-- MAIN CONTAINER HYBRIDE -->
-    <!-- FIX : Suppression du gap-24 sur mobile pour éviter les trous blancs -->
     <main class="
         flex flex-col overflow-x-hidden bg-white
         md:block md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth
     ">
 
         <!-- SECTION 1 : HERO -->
-        <!-- FIX : min-h-[100svh] pour prendre tout l'écran mobile proprement, pt-24 pour éviter la barre de nav -->
         <section id="home" class="
              relative bg-cover bg-center bg-no-repeat
-            w-full flex flex-col justify-center items-center text-center px-4 pt-28 pb-12 min-h-[100svh]
-            md:h-screen md:min-h-screen md:snap-start md:pt-0 md:p-0 md:pb-0"
+            w-full block py-28 px-4 min-h-[100svh]
+            md:flex md:flex-col md:justify-center md:items-center md:text-center md:min-h-screen md:snap-start md:pt-0 md:p-0 md:pb-0"
                  style={`background-image: url('${background_section1.src}');`}
         >
-
-            <!-- FIX : Opacité montée à 85% et flou augmenté pour faire ressortir le texte -->
-            <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
-            <div class="relative z-10 max-w-4xl mx-auto w-full">
-                <!-- FIX : Tailles de textes ajustées (text-3xl) et 'break-words' pour empêcher le mot "Externalisation" de casser l'écran -->
+            <div class="absolute inset-0 bg-white/70 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
+            <div class="relative z-10 max-w-4xl mx-auto w-full text-center">
                 <h1 class="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-[#004732] tracking-tight break-words">
                     Externalisation de la paie & conseil RH <br class="hidden md:block"/>
                     <span class="text-[#00a86b] font-light italic">pour entreprises exigeantes.</span>
                 </h1>
 
-                <!-- FIX : Texte réduit sur mobile (text-sm/base) pour plus de légèreté -->
                 <p class="text-base md:text-xl text-slate-800 mb-8 md:mb-14 leading-relaxed max-w-3xl mx-auto font-normal px-2">
                     <strong class="text-[#004732] font-bold">SO RH EXPERT</strong> accompagne dirigeants, PME et structures en croissance dans une gestion sociale fiable, confidentielle et parfaitement maîtrisée.
                 </p>
@@ -81,11 +75,10 @@ import background_section3 from '../assets/background_section3.jpg';
         </section>
 
         <!-- SECTION 2 : POSITIONNEMENT -->
-        <!-- FIX : py-16 sur mobile au lieu de py-20 pour ne pas étouffer le contenu -->
         <section id="positionnement" class="
             bg-center bg-cover bg-no-repeat relative
-            w-full flex items-center justify-center py-16 md:py-20 px-4
-            md:h-screen md:snap-start md:py-0"
+            w-full block py-20 px-4
+            md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0"
                  style={`background-image: url('${background_section2.src}');`}
         >
             <div class="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0"></div>
@@ -98,7 +91,6 @@ import background_section3 from '../assets/background_section3.jpg';
                     La gestion de la paie et des obligations sociales exige rigueur, précision et parfaite maîtrise du cadre légal. <strong class="text-[#004732] font-bold">SO RH EXPERT</strong> vous apporte une solution complète, sécurisée et sur mesure.
                 </p>
 
-                <!-- FIX : gap-4 sur mobile, gap-8 sur pc -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 text-left">
                     <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
                         <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
@@ -124,19 +116,19 @@ import background_section3 from '../assets/background_section3.jpg';
         <!-- SECTION 3 : EXPERTISE -->
         <section id="expertise" class="
             bg-center bg-cover bg-no-repeat relative
-            w-full bg-white flex flex-col items-center justify-center py-16 md:py-10
-            md:h-screen md:snap-start md:py-0
+            w-full bg-white block py-20 px-0 md:px-4
+            md:flex md:flex-col md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
         " style={`background-image: url('${background_section3.src}');`}
         >
-            <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>            <Expertise client:load />
+            <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
+            <Expertise client:load />
         </section>
 
         <!-- SECTION 4 : LA DIFFÉRENCE -->
         <section id="why" class="
-            w-full bg-[#004732] text-white flex items-center justify-center py-16 md:py-20 px-4
-            md:h-screen md:snap-start md:py-0
+            w-full bg-[#004732] text-white block py-20 px-4
+            md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
         ">
-            <!-- FIX : gap-10 sur mobile au lieu de 16 -->
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
                 <div>
                     <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 block">Notre Différence</span>
@@ -173,7 +165,6 @@ import background_section3 from '../assets/background_section3.jpg';
                     </ul>
                 </div>
 
-                <!-- FIX : Padding réduit sur mobile (p-6 au lieu de p-8) -->
                 <div class="bg-white/5 p-6 md:p-12 rounded-3xl border border-white/10 backdrop-blur-sm">
                     <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#00a86b]">Notre engagement</h3>
                     <div class="space-y-4 md:space-y-6">
@@ -198,18 +189,18 @@ import background_section3 from '../assets/background_section3.jpg';
 
         <!-- SECTION 5 : CONTACT -->
         <section id="contact" class="
-            w-full bg-white flex items-center justify-center pt-28 pb-16 md:pt-32 md:pb-20 px-4
-            md:min-h-screen md:snap-start scroll-mt-20
+            w-full bg-white block py-20 px-4 scroll-mt-24
+            md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
         ">
-        <div class="w-full max-w-2xl px-2">
-            <div class="text-center mb-8 md:mb-10">
-                <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-[#004732]">Échangeons sur vos besoins</h2>
-                <p class="text-slate-500 text-sm md:text-lg font-light">
-                    Confiez votre paie à un partenaire de confiance et sécurisez votre gestion sociale.
-                </p>
-            </div>
+            <div class="w-full max-w-2xl px-2 mx-auto">
+                <div class="text-center mb-8 md:mb-10">
+                    <h2 class="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-[#004732]">Échangeons sur vos besoins</h2>
+                    <p class="text-slate-500 text-sm md:text-lg font-light">
+                        Confiez votre paie à un partenaire de confiance et sécurisez votre gestion sociale.
+                    </p>
+                </div>
 
-            <ContactForm client:load />
+                <ContactForm client:load />
 
                 <div class="flex items-center my-10 md:my-12">
                     <div class="flex-grow border-t border-slate-200"></div>
@@ -263,7 +254,6 @@ import background_section3 from '../assets/background_section3.jpg';
         </section>
 
         <!-- FOOTER : LÉGAL & SEO -->
-        <!-- FIX : py-10 sur mobile, grid-cols-1 au lieu de 2 pour les textes légaux sur petits écrans -->
         <footer class="
             w-full bg-[#0a1f16] text-white/70 py-12 md:py-16 px-6
             md:snap-start md:flex md:flex-col md:justify-center
