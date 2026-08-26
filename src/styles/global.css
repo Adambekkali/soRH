@@ -6,13 +6,18 @@
     --color-so-light: #f8faf9;
 }
 
-/* Ton scroll-snap pour l'effet 100vh */
+/* Scroll-snap is a desktop-only effect.
+   On mobile we use natural document flow so content taller than the
+   viewport is never clipped or overlapped. */
 .snap-container {
     height: 100vh;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
 }
-section {
-    scroll-snap-align: start;
-    height: 100vh;
+
+@media (min-width: 768px) {
+    section {
+        scroll-snap-align: start;
+        height: 100vh;
+    }
 }
