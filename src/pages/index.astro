@@ -2,10 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import Expertise from '../components/Expertise.vue';
 import ContactForm from '../components/ContactForm.vue';
+import { getImage } from 'astro:assets'; // Ajout de l'import getImage
+
 import soRHLogo from '../assets/soRH.png';
 import background_section1 from '../assets/background_section1.jpg';
 import background_section2 from '../assets/background_section2.jpg';
-import background_section3 from '../assets/background_section3.jpg';
+import background_section3 from '../assets/background_section3.jpeg';
+
+// Génération des chemins optimisés pour les images de fond
+const bg1 = await getImage({ src: background_section1, format: 'webp' });
+const bg2 = await getImage({ src: background_section2, format: 'webp' });
+const bg3 = await getImage({ src: background_section3, format: 'webp' });
 ---
 
 <Layout title="SO RH EXPERT | Paie & Conseil RH Premium">
@@ -69,28 +76,29 @@ import background_section3 from '../assets/background_section3.jpg';
     ">
 
         <!-- SECTION 1 : HERO -->
-        <section id="home" class="
-             relative bg-cover bg-center bg-no-repeat
-            w-full block pt-24 pb-16 px-4 min-h-[100svh] flex flex-col justify-center
-            md:flex md:flex-col md:justify-center md:items-center md:text-center md:min-h-screen md:snap-start md:pt-0 md:p-0 md:pb-0"
-                 style={`background-image: url('${background_section1.src}');`}
+        <section id="home" class="relative w-full flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 min-h-[100svh] bg-cover bg-center bg-no-repeat"
+                 style={`background-image: url('${bg1.src}');`}
         >
-            <div class="absolute inset-0 bg-white/70 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
-            <div class="relative z-10 max-w-4xl mx-auto w-full text-center bg-white/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none rounded-2xl md:rounded-none p-6 md:p-0">
-                <h1 class="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-[#004732] tracking-tight break-words">
-                    Externalisation de la paie & conseil RH <br class="hidden md:block"/>
+            <!-- 1. Un seul filtre global propre (50% de blanc + léger flou) pour voir l'image sans bloquer la lecture -->
+            <div class="absolute inset-0 bg-white/70 backdrop-blur-[2px] z-0"></div>
+
+            <!-- 2. Le texte est posé directement, sans boîte blanche qui coupe l'écran (et suppression de la classe 'bg-red') -->
+            <div class="relative z-10 max-w-5xl mx-auto w-full">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight text-[#004732] tracking-tight drop-shadow-sm">
+                    Externalisation de la paie & conseil RH <br class="hidden lg:block"/>
                     <span class="text-[#00a86b] font-light italic">pour entreprises exigeantes.</span>
                 </h1>
 
-                <p class="text-base md:text-xl text-slate-800 mb-8 md:mb-14 leading-relaxed max-w-3xl mx-auto font-normal px-2">
+                <p class="text-lg md:text-xl text-slate-800 mb-10 md:mb-12 leading-relaxed max-w-3xl mx-auto font-medium px-2 drop-shadow-sm">
                     <strong class="text-[#004732] font-bold">SO RH EXPERT</strong> accompagne dirigeants, PME et structures en croissance dans une gestion sociale fiable, confidentielle et parfaitement maîtrisée.
                 </p>
 
-                <div class="flex flex-col md:flex-row justify-center gap-3 md:gap-4 w-full md:w-auto px-2 md:px-0">
-                    <a href="#contact" class="bg-[#004732] text-white text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-semibold hover:bg-[#00a86b] hover:shadow-lg transition duration-300 w-full md:w-auto block text-center shadow-md shadow-[#004732]/10">
+                <!-- 3. Boutons avec un bel effet d'élévation au survol -->
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 w-full md:w-auto px-4 md:px-0">
+                    <a href="#contact" class="bg-[#004732] text-white text-base md:text-lg px-8 py-4 rounded-full font-bold hover:bg-[#00a86b] hover:-translate-y-1 transition-all duration-300 shadow-xl w-full md:w-auto text-center">
                         Demander un accompagnement
                     </a>
-                    <a href="#positionnement" class="text-[#004732] text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-medium border border-[#004732]/30 hover:bg-[#f8faf9] transition w-full md:w-auto block text-center">
+                    <a href="#positionnement" class="text-[#004732] bg-white/10 border border-[#004732]/20 text-base md:text-lg px-8 py-4 rounded-full font-bold hover:bg-white hover:-translate-y-1 transition-all duration-300 shadow-xl w-full md:w-auto text-center">
                         Découvrir notre expertise
                     </a>
                 </div>
@@ -102,7 +110,7 @@ import background_section3 from '../assets/background_section3.jpg';
             bg-center bg-cover bg-no-repeat relative scroll-mt-20
             w-full block pt-24 pb-16 px-4
             md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0"
-                 style={`background-image: url('${background_section2.src}');`}
+                 style={`background-image: url('${bg2.src}');`}
         >
             <div class="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0"></div>
 
@@ -141,7 +149,7 @@ import background_section3 from '../assets/background_section3.jpg';
             bg-center bg-cover bg-no-repeat relative scroll-mt-20
             w-full bg-white block pt-24 pb-16 px-0 md:px-4
             md:flex md:flex-col md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
-        " style={`background-image: url('${background_section3.src}');`}
+        " style={`background-image: url('${bg3.src}');`}
         >
             <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
             <Expertise client:load />
@@ -231,48 +239,48 @@ import background_section3 from '../assets/background_section3.jpg';
                     <div class="flex-grow border-t border-slate-200"></div>
                 </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center max-w-3xl mx-auto w-full">
-                        <!-- Email -->
-                        <div class="flex flex-col items-center group">
-                            <div class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Email</h4>
-                            <a href="mailto:contact@sorh-expert.com" class="text-slate-500 font-medium text-sm break-all px-1 hover:text-[#00a86b] transition-colors">
-                                contact@sorh-expert.com
-                            </a>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center max-w-3xl mx-auto w-full">
+                    <!-- Email -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
                         </div>
-
-                        <!-- Téléphone -->
-                        <div class="flex flex-col items-center group">
-                            <div class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                            </div>
-                            <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Tél</h4>
-                            <a href="tel:+33143450913" class="text-slate-500 font-medium text-sm hover:text-[#00a86b] transition-colors">
-                                +33 1 43 45 09 13
-                            </a>
-                        </div>
-
-                        <!-- Siège Social -->
-                        <div class="flex flex-col items-center group">
-                            <div class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Siège</h4>
-                            <p class="text-slate-500 font-medium text-sm leading-relaxed">
-                                74 av. Dr Netter<br/>
-                                75012 Paris
-                            </p>
-                        </div>
+                        <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Email</h4>
+                        <a href="mailto:contact@sorh-expert.com" class="text-slate-500 font-medium text-sm break-all px-1 hover:text-[#00a86b] transition-colors">
+                            contact@sorh-expert.com
+                        </a>
                     </div>
+
+                    <!-- Téléphone -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Tél</h4>
+                        <a href="tel:+33143450913" class="text-slate-500 font-medium text-sm hover:text-[#00a86b] transition-colors">
+                            +33 1 43 45 09 13
+                        </a>
+                    </div>
+
+                    <!-- Siège Social -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-12 h-12 md:w-12 md:h-12 rounded-full bg-[#f8faf9] flex items-center justify-center text-[#00a86b] mb-3 md:mb-4 shadow-sm border border-slate-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Siège</h4>
+                        <p class="text-slate-500 font-medium text-sm leading-relaxed">
+                            74 av. Dr Netter<br/>
+                            75012 Paris
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
