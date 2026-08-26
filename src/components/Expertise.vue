@@ -1,9 +1,9 @@
 <template>
   <div class="w-full text-center relative z-10 px-4 md:px-0">
-    <h2 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white md:text-[#004732]">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-[#004732]">
       Nos Services Clés
     </h2>
-    <p class="text-white/90 md:text-slate-800 font-medium mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
+    <p class="text-slate-800 font-medium mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
       De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="text-[#00a86b] font-bold">levier de performance</strong>.
     </p>
 
@@ -14,15 +14,15 @@
             v-for="(item, index) in expertise"
             :key="index"
             @click="openModal(item)"
-            class="w-[85vw] flex-shrink-0 snap-center md:w-auto p-8 rounded-3xl border border-white/20 md:border-slate-100 bg-white/10 md:bg-white/95 backdrop-blur-md shadow-md hover:border-[#00a86b] hover:bg-white/10 md:hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative h-auto"
+            class="w-[85vw] flex-shrink-0 snap-center md:w-auto p-8 rounded-3xl border border-slate-100 bg-white/95 backdrop-blur-md shadow-md hover:border-[#00a86b] hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative h-auto"
         >
           <div class="text-[#00a86b] mb-5 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300" v-html="item.icon"></div>
-          <h3 class="font-bold text-lg uppercase tracking-wider text-white md:text-[#004732] mb-3">{{ item.title }}</h3>
-          <p class="text-sm text-white/80 md:text-slate-600 leading-relaxed px-1 flex-grow">
+          <h3 class="font-bold text-lg uppercase tracking-wider text-[#004732] mb-3">{{ item.title }}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed px-1 flex-grow">
             {{ item.shortDesc }}
           </p>
 
-          <span class="mt-6 text-xs text-white md:text-[#004732] border border-white/30 md:border-[#004732]/20 px-6 py-3 rounded-full font-bold uppercase tracking-wider group-hover:bg-[#00a86b] group-hover:text-white group-hover:border-[#00a86b] transition-all duration-300 flex items-center gap-2 bg-white/10 md:bg-white shadow-sm w-full justify-center md:w-auto">
+          <span class="mt-6 text-xs text-[#004732] border border-[#004732]/20 px-6 py-3 rounded-full font-bold uppercase tracking-wider group-hover:bg-[#00a86b] group-hover:text-white group-hover:border-[#00a86b] transition-all duration-300 flex items-center gap-2 bg-white shadow-sm w-full justify-center md:w-auto">
             En savoir +
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

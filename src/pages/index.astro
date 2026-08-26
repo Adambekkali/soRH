@@ -70,28 +70,27 @@ import background_section3 from '../assets/background_section3.jpg';
 
         <!-- SECTION 1 : HERO -->
         <section id="home" class="
-             relative bg-no-repeat bg-center
+             relative bg-cover bg-center bg-no-repeat
             w-full block pt-24 pb-16 px-4 min-h-[100svh] flex flex-col justify-center
-            md:bg-cover md:flex md:flex-col md:justify-center md:items-center md:text-center md:min-h-screen md:snap-start md:pt-0 md:p-0 md:pb-0"
-                 style={`background-image: url('${background_section1.src}'); background-size: cover; background-position: center 30%;`}
+            md:flex md:flex-col md:justify-center md:items-center md:text-center md:min-h-screen md:snap-start md:pt-0 md:p-0 md:pb-0"
+                 style={`background-image: url('${background_section1.src}');`}
         >
-            <!-- Overlay: dégradé sombre sur mobile, voile léger sur desktop -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#004732]/85 via-[#004732]/70 to-[#004732]/85 md:bg-white/60 md:backdrop-blur-sm z-0"></div>
-            <div class="relative z-10 max-w-4xl mx-auto w-full text-center">
-                <h1 class="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-white md:text-[#004732] tracking-tight break-words">
+            <div class="absolute inset-0 bg-white/70 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
+            <div class="relative z-10 max-w-4xl mx-auto w-full text-center bg-white/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none rounded-2xl md:rounded-none p-6 md:p-0">
+                <h1 class="text-3xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight text-[#004732] tracking-tight break-words">
                     Externalisation de la paie & conseil RH <br class="hidden md:block"/>
-                    <span class="text-[#00a86b] md:text-[#00a86b] font-light italic">pour entreprises exigeantes.</span>
+                    <span class="text-[#00a86b] font-light italic">pour entreprises exigeantes.</span>
                 </h1>
 
-                <p class="text-base md:text-xl text-white/90 md:text-slate-800 mb-8 md:mb-14 leading-relaxed max-w-3xl mx-auto font-normal px-2">
-                    <strong class="text-white md:text-[#004732] font-bold">SO RH EXPERT</strong> accompagne dirigeants, PME et structures en croissance dans une gestion sociale fiable, confidentielle et parfaitement maîtrisée.
+                <p class="text-base md:text-xl text-slate-800 mb-8 md:mb-14 leading-relaxed max-w-3xl mx-auto font-normal px-2">
+                    <strong class="text-[#004732] font-bold">SO RH EXPERT</strong> accompagne dirigeants, PME et structures en croissance dans une gestion sociale fiable, confidentielle et parfaitement maîtrisée.
                 </p>
 
                 <div class="flex flex-col md:flex-row justify-center gap-3 md:gap-4 w-full md:w-auto px-2 md:px-0">
-                    <a href="#contact" class="bg-[#00a86b] md:bg-[#004732] text-white text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-semibold hover:bg-[#004732] md:hover:bg-[#00a86b] hover:shadow-lg transition duration-300 w-full md:w-auto block text-center shadow-md shadow-[#004732]/10">
+                    <a href="#contact" class="bg-[#004732] text-white text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-semibold hover:bg-[#00a86b] hover:shadow-lg transition duration-300 w-full md:w-auto block text-center shadow-md shadow-[#004732]/10">
                         Demander un accompagnement
                     </a>
-                    <a href="#positionnement" class="text-white md:text-[#004732] text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-medium border border-white/40 md:border-[#004732]/30 hover:bg-white/10 md:hover:bg-[#f8faf9] transition w-full md:w-auto block text-center">
+                    <a href="#positionnement" class="text-[#004732] text-base md:text-lg px-6 py-4 md:px-8 rounded-full font-medium border border-[#004732]/30 hover:bg-[#f8faf9] transition w-full md:w-auto block text-center">
                         Découvrir notre expertise
                     </a>
                 </div>
@@ -100,39 +99,38 @@ import background_section3 from '../assets/background_section3.jpg';
 
         <!-- SECTION 2 : POSITIONNEMENT -->
         <section id="positionnement" class="
-            bg-no-repeat bg-center relative scroll-mt-20
+            bg-center bg-cover bg-no-repeat relative scroll-mt-20
             w-full block pt-24 pb-16 px-4
-            md:bg-cover md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0"
-                 style={`background-image: url('${background_section2.src}'); background-size: cover; background-position: center 25%;`}
+            md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0"
+                 style={`background-image: url('${background_section2.src}');`}
         >
-            <!-- Overlay: dégradé sombre sur mobile, voile léger sur desktop -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#004732]/80 via-[#004732]/65 to-[#004732]/80 md:bg-white/55 md:backdrop-blur-[2px] z-0"></div>
+            <div class="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0"></div>
 
-            <div class="max-w-4xl mx-auto text-center relative z-10 w-full">
+            <div class="max-w-4xl mx-auto text-center relative z-10 w-full bg-white/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none rounded-2xl md:rounded-none p-6 md:p-0">
                 <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 md:mb-4 block">Notre Vision</span>
-                <h2 class="text-2xl md:text-5xl font-bold mb-6 md:mb-8 text-white md:text-[#004732] leading-tight">Une expertise au service <br/>de votre sérénité.</h2>
+                <h2 class="text-2xl md:text-5xl font-bold mb-6 md:mb-8 text-[#004732] leading-tight">Une expertise au service <br/>de votre sérénité.</h2>
 
-                <p class="text-base md:text-lg text-white/90 md:text-slate-800 leading-relaxed mb-10 md:mb-12 font-medium">
-                    La gestion de la paie et des obligations sociales exige rigueur, précision et parfaite maîtrise du cadre légal. <strong class="text-white md:text-[#004732] font-bold">SO RH EXPERT</strong> vous apporte une solution complète, sécurisée et sur mesure.
+                <p class="text-base md:text-lg text-slate-800 leading-relaxed mb-10 md:mb-12 font-medium">
+                    La gestion de la paie et des obligations sociales exige rigueur, précision et parfaite maîtrise du cadre légal. <strong class="text-[#004732] font-bold">SO RH EXPERT</strong> vous apporte une solution complète, sécurisée et sur mesure.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 text-left">
-                    <div class="p-5 md:p-6 bg-white/10 md:bg-white backdrop-blur-md md:backdrop-blur-none rounded-2xl shadow-md border border-white/20 md:border-slate-100">
+                    <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
                         <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
-                        <h3 class="font-bold text-white md:text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Accompagnement Pro</h3>
-                        <p class="text-xs md:text-sm text-white/80 md:text-slate-700 leading-relaxed">Un suivi dédié et professionnel à chaque étape.</p>
+                        <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Accompagnement Pro</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Un suivi dédié et professionnel à chaque étape.</p>
                     </div>
 
-                    <div class="p-5 md:p-6 bg-white/10 md:bg-white backdrop-blur-md md:backdrop-blur-none rounded-2xl shadow-md border border-white/20 md:border-slate-100">
+                    <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
                         <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
-                        <h3 class="font-bold text-white md:text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Conformité Garantie</h3>
-                        <p class="text-xs md:text-sm text-white/80 md:text-slate-700 leading-relaxed">Zéro risque légal, votre entreprise est sécurisée.</p>
+                        <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Conformité Garantie</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Zéro risque légal, votre entreprise est sécurisée.</p>
                     </div>
 
-                    <div class="p-5 md:p-6 bg-white/10 md:bg-white backdrop-blur-md md:backdrop-blur-none rounded-2xl shadow-md border border-white/20 md:border-slate-100">
+                    <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
                         <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
-                        <h3 class="font-bold text-white md:text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Gain de Temps</h3>
-                        <p class="text-xs md:text-sm text-white/80 md:text-slate-700 leading-relaxed">Libérez-vous des contraintes pour piloter votre croissance.</p>
+                        <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Gain de Temps</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Libérez-vous des contraintes pour piloter votre croissance.</p>
                     </div>
                 </div>
             </div>
@@ -140,13 +138,12 @@ import background_section3 from '../assets/background_section3.jpg';
 
         <!-- SECTION 3 : EXPERTISE -->
         <section id="expertise" class="
-            bg-no-repeat bg-center relative scroll-mt-20
-            w-full block pt-24 pb-16 px-0 md:px-4
-            md:bg-cover md:flex md:flex-col md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
-        " style={`background-image: url('${background_section3.src}'); background-size: cover; background-position: center 20%;`}
+            bg-center bg-cover bg-no-repeat relative scroll-mt-20
+            w-full bg-white block pt-24 pb-16 px-0 md:px-4
+            md:flex md:flex-col md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
+        " style={`background-image: url('${background_section3.src}');`}
         >
-            <!-- Overlay: dégradé sombre sur mobile, voile léger sur desktop -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#004732]/80 via-[#004732]/65 to-[#004732]/80 md:bg-white/50 md:backdrop-blur-sm z-0"></div>
+            <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
             <Expertise client:load />
         </section>
 
