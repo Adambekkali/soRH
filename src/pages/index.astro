@@ -2,17 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Expertise from '../components/Expertise.vue';
 import ContactForm from '../components/ContactForm.vue';
-import { getImage } from 'astro:assets'; // Ajout de l'import getImage
-
 import soRHLogo from '../assets/soRH.png';
 import background_section1 from '../assets/background_section1.jpg';
 import background_section2 from '../assets/background_section2.jpg';
 import background_section3 from '../assets/background_section3.jpeg';
-
-// Génération des chemins optimisés pour les images de fond
-const bg1 = await getImage({ src: background_section1, format: 'webp' });
-const bg2 = await getImage({ src: background_section2, format: 'webp' });
-const bg3 = await getImage({ src: background_section3, format: 'webp' });
 ---
 
 <Layout title="SO RH EXPERT | Paie & Conseil RH Premium">
@@ -24,7 +17,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
                 <img
                         src={soRHLogo.src}
                         alt="Logo SO RH EXPERT"
-                        class="h-10 md:h-20 w-auto object-contain transition-transform hover:scale-105"
+                        class="h-16 md:h-28 w-auto object-contain -my-3 md:-my-4 transition-transform hover:scale-105"
                 />
             </a>
         </div>
@@ -33,7 +26,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
             <a href="#positionnement" class="hover:text-[#00a86b] transition py-2">Notre Vision</a>
             <a href="#expertise" class="hover:text-[#00a86b] transition py-2">Services</a>
             <a href="#why" class="hover:text-[#00a86b] transition py-2">Notre Différence</a>
-            <a href="#contact" class="bg-[#004732] text-white px-6 py-2.5 rounded-full hover:bg-[#00a86b] transition shadow-md">
+            <a href="#contact" class="bg-[#004732] text-white px-6 py-2.5 rounded-full hover:bg-[#FFBD59] transition shadow-md">
                 Prendre rendez-vous
             </a>
         </div>
@@ -50,7 +43,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
             <a href="#positionnement" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Notre Vision</a>
             <a href="#expertise" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Services</a>
             <a href="#why" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Notre Différence</a>
-            <a href="#contact" class="block py-3 text-center bg-[#004732] text-white rounded-full mt-2 hover:bg-[#00a86b] transition">Prendre rendez-vous</a>
+            <a href="#contact" class="block py-3 text-center bg-[#004732] text-white rounded-full mt-2 hover:bg-[#FFBD59] transition">Prendre rendez-vous</a>
         </div>
     </nav>
 
@@ -77,7 +70,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
 
         <!-- SECTION 1 : HERO -->
         <section id="home" class="relative w-full flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 min-h-[100svh] bg-cover bg-center bg-no-repeat"
-                 style={`background-image: url('${bg1.src}');`}
+                 style={`background-image: url('${background_section1.src}');`}
         >
             <!-- 1. Un seul filtre global propre (50% de blanc + léger flou) pour voir l'image sans bloquer la lecture -->
             <div class="absolute inset-0 bg-white/70 backdrop-blur-[2px] z-0"></div>
@@ -98,7 +91,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
                     <a href="#contact" class="bg-[#004732] text-white text-base md:text-lg px-8 py-4 rounded-full font-bold hover:bg-[#00a86b] hover:-translate-y-1 transition-all duration-300 shadow-xl w-full md:w-auto text-center">
                         Demander un accompagnement
                     </a>
-                    <a href="#positionnement" class="text-[#004732] bg-white/10 border border-[#004732]/20 text-base md:text-lg px-8 py-4 rounded-full font-bold hover:bg-white hover:-translate-y-1 transition-all duration-300 shadow-xl w-full md:w-auto text-center">
+                    <a href="#positionnement" class="text-[#004732] bg-white/10 border border-[#004732]/20 text-base md:text-lg px-8 py-4 rounded-full font-bold hover:bg-white hover:border-[#FFBD59] hover:-translate-y-1 transition-all duration-300 shadow-xl w-full md:w-auto text-center">
                         Découvrir notre expertise
                     </a>
                 </div>
@@ -110,7 +103,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
             bg-center bg-cover bg-no-repeat relative scroll-mt-20
             w-full block pt-24 pb-16 px-4
             md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0"
-                 style={`background-image: url('${bg2.src}');`}
+                 style={`background-image: url('${background_section2.src}');`}
         >
             <div class="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0"></div>
 
@@ -130,7 +123,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
                     </div>
 
                     <div class="p-5 md:p-6 bg-white rounded-2xl shadow-md border border-slate-100">
-                        <div class="text-[#00a86b] text-xl md:text-2xl mb-3 font-bold">✓</div>
+                        <div class="text-[#FFBD59] text-xl md:text-2xl mb-3 font-bold">✓</div>
                         <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Conformité Garantie</h3>
                         <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Zéro risque légal, votre entreprise est sécurisée.</p>
                     </div>
@@ -149,7 +142,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
             bg-center bg-cover bg-no-repeat relative scroll-mt-20
             w-full bg-white block pt-24 pb-16 px-0 md:px-4
             md:flex md:flex-col md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
-        " style={`background-image: url('${bg3.src}');`}
+        " style={`background-image: url('${background_section3.src}');`}
         >
             <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
             <Expertise client:load />
@@ -162,7 +155,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
         ">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
                 <div>
-                    <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 block">Notre Différence</span>
+                    <span class="text-[#FFBD59] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 block">Notre Différence</span>
                     <h2 class="text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">Pourquoi choisir <br/><span class="italic font-light">SO RH EXPERT ?</span></h2>
                     <p class="text-white/80 mb-8 font-light text-base md:text-lg">
                         Dans un environnement réglementaire en constante évolution, vous avez besoin d’un partenaire fiable. Vous n’êtes pas un dossier, vous êtes un client que nous accompagnons dans la durée.
@@ -197,7 +190,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
                 </div>
 
                 <div class="bg-white/5 p-6 md:p-12 rounded-3xl border border-white/10 backdrop-blur-sm">
-                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#00a86b]">Notre engagement</h3>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#FFBD59]">Notre engagement</h3>
                     <div class="space-y-4 md:space-y-6">
                         <div>
                             <h4 class="font-bold text-base md:text-lg">Conformité Légale</h4>
@@ -248,7 +241,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
                             </svg>
                         </div>
                         <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Email</h4>
-                        <a href="mailto:contact@sorh-expert.com" class="text-slate-500 font-medium text-sm break-all px-1 hover:text-[#00a86b] transition-colors">
+                        <a href="mailto:contact@sorh-expert.com" class="text-slate-500 font-medium text-sm break-all px-1 hover:text-[#FFBD59] transition-colors">
                             contact@sorh-expert.com
                         </a>
                     </div>
@@ -261,7 +254,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
                             </svg>
                         </div>
                         <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Tél</h4>
-                        <a href="tel:+33143450913" class="text-slate-500 font-medium text-sm hover:text-[#00a86b] transition-colors">
+                        <a href="tel:+33143450913" class="text-slate-500 font-medium text-sm hover:text-[#FFBD59] transition-colors">
                             +33 1 43 45 09 13
                         </a>
                     </div>
@@ -300,7 +293,7 @@ const bg3 = await getImage({ src: background_section3, format: 'webp' });
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 border-b border-white/10 pb-3 md:pb-4">Informations Juridiques</h4>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-xs md:text-sm mb-4 md:mb-6 border-b border-[#FFBD59]/30 pb-3 md:pb-4">Informations Juridiques</h4>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-[11px] md:text-sm">
                         <div>
                             <span class="text-white/40 block mb-0.5 md:mb-1">Société</span>

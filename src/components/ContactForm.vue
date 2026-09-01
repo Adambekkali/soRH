@@ -5,18 +5,18 @@
       <input
           type="text"
           placeholder="Prénom"
-          class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#00a86b] outline-none transition-all"
+          class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#FFBD59] outline-none transition-all"
       />
       <input
           type="email"
           placeholder="Adresse e-mail"
-          class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#00a86b] outline-none transition-all"
+          class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#FFBD59] outline-none transition-all"
       />
     </div>
     <textarea
         placeholder="Comment pouvons-nous vous aider ?"
         rows="4"
-        class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#00a86b] outline-none transition-all"
+        class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#FFBD59] outline-none transition-all"
     ></textarea>
     <button
         type="submit"

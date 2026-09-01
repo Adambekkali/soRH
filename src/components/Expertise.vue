@@ -4,7 +4,7 @@
       Nos Services Clés
     </h2>
     <p class="text-slate-800 font-medium mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
-      De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="text-[#00a86b] font-bold">levier de performance</strong>.
+      De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="text-[#FFBD59] font-bold">levier de performance</strong>.
     </p>
 
     <div class="relative">
@@ -14,15 +14,15 @@
             v-for="(item, index) in expertise"
             :key="index"
             @click="openModal(item)"
-            class="w-[85vw] flex-shrink-0 snap-center md:w-auto p-8 rounded-3xl border border-slate-100 bg-white/95 backdrop-blur-md shadow-md hover:border-[#00a86b] hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative h-auto"
+            class="w-[85vw] flex-shrink-0 snap-center md:w-auto p-8 rounded-3xl border border-slate-100 bg-white/95 backdrop-blur-md shadow-md hover:border-[#FFBD59] hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative h-auto"
         >
-          <div class="text-[#00a86b] mb-5 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300" v-html="item.icon"></div>
+          <div class="text-[#00a86b] group-hover:text-[#FFBD59] mb-5 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300" v-html="item.icon"></div>
           <h3 class="font-bold text-lg uppercase tracking-wider text-[#004732] mb-3">{{ item.title }}</h3>
           <p class="text-sm text-slate-600 leading-relaxed px-1 flex-grow">
             {{ item.shortDesc }}
           </p>
 
-          <span class="mt-6 text-xs text-[#004732] border border-[#004732]/20 px-6 py-3 rounded-full font-bold uppercase tracking-wider group-hover:bg-[#00a86b] group-hover:text-white group-hover:border-[#00a86b] transition-all duration-300 flex items-center gap-2 bg-white shadow-sm w-full justify-center md:w-auto">
+          <span class="mt-6 text-xs text-[#004732] border border-[#004732]/20 px-6 py-3 rounded-full font-bold uppercase tracking-wider group-hover:bg-[#FFBD59] group-hover:text-white group-hover:border-[#FFBD59] transition-all duration-300 flex items-center gap-2 bg-white shadow-sm w-full justify-center md:w-auto">
             En savoir +
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -53,18 +53,18 @@
       <div v-if="selectedItem" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 text-left">
         <div class="absolute inset-0 bg-[#004732]/80 backdrop-blur-sm" @click="closeModal"></div>
 
-        <div class="bg-white rounded-3xl p-6 md:p-10 max-w-2xl w-full shadow-2xl relative z-10 overflow-y-auto max-h-[85vh] border-t-4 border-[#00a86b] flex flex-col">
+        <div class="bg-white rounded-3xl p-6 md:p-10 max-w-2xl w-full shadow-2xl relative z-10 overflow-y-auto max-h-[85vh] border-t-4 border-[#FFBD59] flex flex-col">
           <button @click="closeModal" class="absolute top-4 right-4 text-slate-400 hover:text-[#004732] bg-slate-100 hover:bg-slate-200 rounded-full w-10 h-10 md:w-8 md:h-8 flex items-center justify-center transition">✕</button>
 
           <div class="flex items-center gap-4 mb-6 pr-8 mt-2">
             <div class="p-3 bg-[#f8faf9] rounded-xl text-[#00a86b] flex-shrink-0" v-html="selectedItem.icon"></div>
             <div>
               <h3 class="text-xl md:text-2xl font-bold text-[#004732] leading-tight">{{ selectedItem.fullTitle }}</h3>
-              <p class="text-xs md:text-sm text-[#00a86b] font-bold uppercase tracking-wide mt-1">Notre engagement</p>
+              <p class="text-xs md:text-sm text-[#FFBD59] font-bold uppercase tracking-wide mt-1">Notre engagement</p>
             </div>
           </div>
 
-          <p class="text-slate-700 mb-8 leading-relaxed text-sm md:text-lg border-l-4 border-[#00a86b]/40 pl-4 italic">
+          <p class="text-slate-700 mb-8 leading-relaxed text-sm md:text-lg border-l-4 border-[#FFBD59]/40 pl-4 italic">
             <span v-html="selectedItem.description"></span>
           </p>
 
@@ -80,7 +80,7 @@
             </div>
           </div>
 
-          <button @click="closeModal" class="mt-8 w-full py-4 bg-[#004732] text-white rounded-xl font-bold hover:bg-[#00a86b] transition shadow-lg shadow-[#004732]/20 text-sm md:text-base">
+          <button @click="closeModal" class="mt-8 w-full py-4 bg-[#004732] text-white rounded-xl font-bold hover:bg-[#FFBD59] transition shadow-lg shadow-[#004732]/20 text-sm md:text-base">
             Fermer la fenêtre
           </button>
         </div>
