@@ -4,7 +4,7 @@
       Nos Services Clés
     </h2>
     <p class="text-slate-800 font-medium mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
-      De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="text-[#FFBD59] font-bold">levier de performance</strong>.
+      De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="bg-[#004E38] text-white px-3 py-1 rounded-lg shadow-sm whitespace-nowrap ml-1"><strong class="text-[#FFBD59] font-bold ">levier de performance.</strong></strong>
     </p>
 
     <div class="relative">
