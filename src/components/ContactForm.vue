@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="space-y-4 md:space-y-6">
+  <form @submit.prevent="handleSubmit" data-netlify="true" class="space-y-4 md:space-y-6">
     <!-- FIX : grid-cols-1 sur mobile pour empiler, md:grid-cols-2 sur PC -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <input
