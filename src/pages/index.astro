@@ -25,7 +25,9 @@ import background_section3 from '../assets/background_section3.jpeg';
         <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-[#004732]">
             <a href="#positionnement" class="hover:text-[#00a86b] transition py-2">Notre Vision</a>
             <a href="#expertise" class="hover:text-[#00a86b] transition py-2">Services</a>
+            <a href="#silae" class="hover:text-[#00a86b] transition py-2">Silae</a>
             <a href="#why" class="hover:text-[#00a86b] transition py-2">Notre Différence</a>
+            <a href="#international" class="hover:text-[#00a86b] transition py-2">International</a>
             <a href="#contact" class="bg-[#004732] text-white px-6 py-2.5 rounded-full hover:bg-[#FFBD59] transition shadow-md">
                 Prendre rendez-vous
             </a>
@@ -42,7 +44,9 @@ import background_section3 from '../assets/background_section3.jpeg';
         <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-[#004732]/10 shadow-lg hidden flex-col py-4 px-6 gap-1 text-[#004732] font-bold uppercase tracking-widest text-sm">
             <a href="#positionnement" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Notre Vision</a>
             <a href="#expertise" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Services</a>
+            <a href="#silae" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Silae</a>
             <a href="#why" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Notre Différence</a>
+            <a href="#international" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">International</a>
             <a href="#contact" class="block py-3 text-center bg-[#004732] text-white rounded-full mt-2 hover:bg-[#FFBD59] transition">Prendre rendez-vous</a>
         </div>
     </nav>
@@ -62,14 +66,11 @@ import background_section3 from '../assets/background_section3.jpeg';
         });
     </script>
 
-    <!-- MAIN CONTAINER HYBRIDE -->
-    <main class="
-        flex flex-col overflow-x-hidden bg-white
-        md:block md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth
-    ">
+    <!-- MAIN CONTAINER : défilement vertical libre et fluide -->
+    <main class="flex flex-col overflow-x-hidden bg-white">
 
         <!-- SECTION 1 : HERO -->
-        <section id="home" class="relative w-full flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 min-h-[100svh] bg-cover bg-center bg-no-repeat"
+        <section id="home" class="relative w-full flex flex-col justify-center items-center text-center px-4 pt-32 pb-24 md:pb-32 min-h-[100svh] bg-cover bg-center bg-no-repeat"
                  style={`background-image: url('${background_section1.src}');`}
         >
             <!-- 1. Un seul filtre global propre (50% de blanc + léger flou) pour voir l'image sans bloquer la lecture -->
@@ -98,11 +99,13 @@ import background_section3 from '../assets/background_section3.jpeg';
             </div>
         </section>
 
+        <!-- Séparation : transition douce vers la section suivante -->
+        <div class="h-24 md:h-32 bg-gradient-to-b from-white to-[#f8faf9]"></div>
+
         <!-- SECTION 2 : POSITIONNEMENT -->
         <section id="positionnement" class="
             bg-center bg-cover bg-no-repeat relative scroll-mt-20
-            w-full block pt-24 pb-16 px-4
-            md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0"
+            w-full block py-24 px-4"
                  style={`background-image: url('${background_section2.src}');`}
         >
             <div class="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0"></div>
@@ -137,21 +140,25 @@ import background_section3 from '../assets/background_section3.jpeg';
             </div>
         </section>
 
+        <!-- Séparation : respiration avant l'expertise -->
+        <div class="h-24 md:h-32 bg-gradient-to-b from-[#f8faf9] to-white"></div>
+
         <!-- SECTION 3 : EXPERTISE -->
         <section id="expertise" class="
             bg-center bg-cover bg-no-repeat relative scroll-mt-20
-            w-full bg-white block pt-24 pb-16 px-0 md:px-4
-            md:flex md:flex-col md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
+            w-full bg-white block py-24 px-0 md:px-4
         " style={`background-image: url('${background_section3.src}');`}
         >
             <div class="absolute inset-0 bg-white/65 backdrop-blur-sm z-0 shadow-[inset_0_0_100px_rgba(255,255,255,0.5)]"></div>
             <Expertise client:load />
         </section>
 
+        <!-- Séparation : transition vers la section sombre -->
+        <div class="h-24 md:h-32 bg-gradient-to-b from-white to-[#004732]"></div>
+
         <!-- SECTION 4 : LA DIFFÉRENCE -->
         <section id="why" class="
-            w-full bg-[#004732] text-white block pt-24 pb-16 px-4 scroll-mt-20
-            md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
+            w-full bg-[#004732] text-white block py-24 px-4 scroll-mt-20
         ">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
                 <div>
@@ -211,10 +218,151 @@ import background_section3 from '../assets/background_section3.jpeg';
             </div>
         </section>
 
-        <!-- SECTION 5 : CONTACT -->
+        <!-- Séparation : transition vers les nouvelles sections -->
+        <div class="h-24 md:h-32 bg-gradient-to-b from-[#004732] to-white"></div>
+
+        <!-- SECTION 5 : EXPERTISE SILAE -->
+        <section id="silae" class="w-full bg-white block py-24 px-4 scroll-mt-20">
+            <div class="max-w-5xl mx-auto text-center">
+                <span class="text-[#00a86b] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 block">Expertise Silae</span>
+                <h2 class="text-2xl md:text-5xl font-bold mb-4 md:mb-6 text-[#004732] leading-tight">Une maîtrise complète <br class="hidden md:block"/>du logiciel <span class="italic font-light">Silae</span>.</h2>
+                <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-10 md:mb-12 font-medium max-w-3xl mx-auto">
+                    SO RH EXPERT s'appuie sur <strong class="text-[#004732] font-bold">Silae</strong>, l'un des logiciels de paie les plus avancés du marché. L'ensemble de nos collaborateurs est <strong class="text-[#FFBD59] font-bold">officiellement certifié</strong> par l'éditeur du logiciel, garantissant une expertise technique reconnue et une fiabilité sans compromis.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto text-left">
+                    <div class="p-6 bg-[#f8faf9] rounded-2xl shadow-md border border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-[#004732] text-white flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-[#004732] mb-2 text-base md:text-lg">Certification Officielle</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Tous nos collaborateurs sont certifiés directement par l'éditeur Silae.</p>
+                    </div>
+
+                    <div class="p-6 bg-[#f8faf9] rounded-2xl shadow-md border border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-[#00a86b] text-white flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-[#004732] mb-2 text-base md:text-lg">Outil de Pointe</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Un logiciel moderne et performant pour une paie précise et sécurisée.</p>
+                    </div>
+
+                    <div class="p-6 bg-[#f8faf9] rounded-2xl shadow-md border border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-[#FFBD59] text-white flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-[#004732] mb-2 text-base md:text-lg">Fiabilité Garantie</h3>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Une expertise technique reconnue au service de votre sérénité.</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder pour le logo Silae -->
+                <div class="mt-12 md:mt-16 flex justify-center">
+                    <div class="w-48 h-24 md:w-64 md:h-32 rounded-2xl border-2 border-dashed border-[#00a86b]/30 bg-[#f8faf9] flex items-center justify-center">
+                        <img src="" alt="Logo Silae" class="max-w-full max-h-full object-contain p-3" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Séparation : respiration avant la section internationale -->
+        <div class="h-24 md:h-32 bg-gradient-to-b from-white to-[#f8faf9]"></div>
+
+        <!-- SECTION 6 : IMPLANTATION INTERNATIONALE -->
+        <section id="international" class="w-full bg-[#f8faf9] block py-24 px-4 scroll-mt-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10 md:mb-16">
+                    <span class="text-[#FFBD59] font-bold tracking-widest uppercase text-xs md:text-sm mb-3 block">Implantation Internationale</span>
+                    <h2 class="text-2xl md:text-5xl font-bold mb-4 md:mb-6 text-[#004732] leading-tight">Une présence au-delà <br class="hidden md:block"/>de nos frontières.</h2>
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-medium max-w-3xl mx-auto">
+                        SO RH EXPERT déploie son expertise bien au-delà de la France, avec une implantation solide en <strong class="text-[#004732] font-bold">Afrique de l'Ouest</strong> et au <strong class="text-[#004732] font-bold">Congo</strong>, accompagnant les entreprises dans leurs projets d'expansion internationale.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <!-- Carte / Placeholder -->
+                    <div class="order-2 md:order-1">
+                        <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-[#004732] to-[#00a86b] p-1 shadow-xl">
+                            <div class="w-full h-full rounded-[20px] bg-white flex items-center justify-center relative overflow-hidden">
+                                <!-- SVG abstrait du continent africain -->
+                                <svg viewBox="0 0 400 400" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="africaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#00a86b" stop-opacity="0.15"/>
+                                            <stop offset="100%" stop-color="#004732" stop-opacity="0.1"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Forme stylisée du continent -->
+                                    <path d="M200 60 C 240 60, 280 80, 290 120 C 300 160, 280 180, 290 210 C 300 240, 310 270, 290 300 C 270 330, 240 340, 210 340 C 180 340, 150 330, 130 300 C 110 270, 100 240, 110 210 C 120 180, 100 160, 110 120 C 120 80, 160 60, 200 60 Z"
+                                          fill="url(#africaGrad)" stroke="#00a86b" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+                                    <!-- Points de présence -->
+                                    <circle cx="180" cy="200" r="8" fill="#FFBD59" class="animate-pulse"/>
+                                    <circle cx="180" cy="200" r="16" fill="#FFBD59" opacity="0.3"/>
+                                    <circle cx="220" cy="260" r="6" fill="#00a86b"/>
+                                    <circle cx="220" cy="260" r="12" fill="#00a86b" opacity="0.3"/>
+                                    <!-- Lignes de connexion -->
+                                    <line x1="180" y1="200" x2="220" y2="260" stroke="#FFBD59" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
+                                </svg>
+                                <span class="absolute bottom-4 left-0 right-0 text-center text-xs md:text-sm text-[#004732]/50 font-bold uppercase tracking-widest">Carte de présence</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Texte et points forts -->
+                    <div class="order-1 md:order-2 space-y-6">
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-md border border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-[#00a86b] text-white flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5m14.945 0H22M12 2v2.055M12 19.945V22M5.636 5.636l1.455 1.455m9.818 9.818l1.455 1.455M5.636 18.364l1.455-1.455m9.818-9.818l1.455-1.455M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#004732] mb-1 text-base md:text-lg">Afrique de l'Ouest</h3>
+                                <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Une présence régionale forte pour accompagner les entreprises dans leurs développements ouest-africains.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-md border border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-[#FFBD59] text-white flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#004732] mb-1 text-base md:text-lg">Congo</h3>
+                                <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Un ancrage local au Congo pour un accompagnement de proximité, adapté aux spécificités régionales.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-md border border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-[#004732] text-white flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#004732] mb-1 text-base md:text-lg">Vision Internationale</h3>
+                                <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Une expertise qui traverse les frontières, pour des partenaires fiables où que vous soyez.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Séparation : transition vers le contact -->
+        <div class="h-24 md:h-32 bg-gradient-to-b from-[#f8faf9] to-white"></div>
+
+        <!-- SECTION 7 : CONTACT -->
         <section id="contact" class="
             w-full bg-white block pt-24 pb-16 px-4 scroll-mt-20
-            md:flex md:items-center md:justify-center md:min-h-screen md:snap-start md:py-0
         ">
             <div class="w-full max-w-2xl px-2 mx-auto">
                 <div class="text-center mb-8 md:mb-10">
@@ -241,8 +389,8 @@ import background_section3 from '../assets/background_section3.jpeg';
                             </svg>
                         </div>
                         <h4 class="text-[#004732] font-bold mb-1 text-sm uppercase tracking-wide">Email</h4>
-                        <a href="mailto:contact@sorh-expert.com" class="text-slate-500 font-medium text-sm break-all px-1 hover:text-[#FFBD59] transition-colors">
-                            contact@sorh-expert.com
+                        <a href="mailto:contact@so-rh.com" class="text-slate-500 font-medium text-sm break-all px-1 hover:text-[#FFBD59] transition-colors">
+                            contact@so-rh.com
                         </a>
                     </div>
 
@@ -280,7 +428,6 @@ import background_section3 from '../assets/background_section3.jpeg';
         <!-- FOOTER : LÉGAL & SEO -->
         <footer class="
             w-full bg-[#0a1f16] text-white/70 py-12 md:py-16 px-6
-            md:snap-start md:flex md:flex-col md:justify-center
         ">
             <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
 
