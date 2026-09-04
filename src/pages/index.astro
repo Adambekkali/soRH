@@ -70,7 +70,7 @@ import background_section3 from '../assets/background_section3.jpeg';
     <main class="flex flex-col overflow-x-hidden bg-white">
 
         <!-- SECTION 1 : HERO -->
-        <section id="home" class="relative w-full flex flex-col justify-center items-center text-center px-4 pt-32 pb-24 md:pb-32 min-h-[100svh] bg-cover bg-center bg-no-repeat"
+        <section id="home" class="relative w-full flex flex-col justify-center items-center text-center px-4 pt-32 pb-0 min-h-[100svh] bg-cover bg-center bg-no-repeat bg-fixed"
                  style={`background-image: url('${background_section1.src}');`}
         >
             <!-- 1. Un seul filtre global propre (50% de blanc + léger flou) pour voir l'image sans bloquer la lecture -->
@@ -99,47 +99,9 @@ import background_section3 from '../assets/background_section3.jpeg';
             </div>
         </section>
 
-        <!-- BANDEAU DE RÉASSURANCE : dégradé caméléon vers la section suivante -->
-        <!-- BANDEAU DE RÉASSURANCE : Dégradé caméléon fondu sur l'image suivante -->
-        <div class="relative z-20 w-full bg-gradient-to-b from-white via-white to-white/0 pt-10 pb-16 px-4 -mb-16 pointer-events-none">
-
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 pointer-events-auto">
-
-                <!-- Carte 1 -->
-                <div class="flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white transition-transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-full bg-[#00a86b]/10 flex items-center justify-center flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a86b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <span class="text-[#004732] font-bold text-sm md:text-base leading-tight">Accompagnement<br/><span class="font-medium text-slate-600">100% sur-mesure</span></span>
-                </div>
-
-                <!-- Carte 2 -->
-                <div class="flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white transition-transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-full bg-[#00a86b]/10 flex items-center justify-center flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a86b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <span class="text-[#004732] font-bold text-sm md:text-base leading-tight">Conformité légale<br/><span class="font-medium text-slate-600">garantie</span></span>
-                </div>
-
-                <!-- Carte 3 -->
-                <div class="flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white transition-transform hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-full bg-[#FFBD59]/15 flex items-center justify-center flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#FFBD59]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <span class="text-[#004732] font-bold text-sm md:text-base leading-tight">Zéro retard<br/><span class="font-medium text-slate-600">de paie</span></span>
-                </div>
-
-            </div>
-        </div>
         <!-- SECTION 2 : POSITIONNEMENT -->
         <section id="positionnement" class="
-            bg-center bg-cover bg-no-repeat relative scroll-mt-20
+            bg-center bg-cover bg-no-repeat bg-fixed relative scroll-mt-20
             w-full block py-24 px-4"
                  style={`background-image: url('${background_section2.src}');`}
         >
@@ -171,6 +133,13 @@ import background_section3 from '../assets/background_section3.jpeg';
                         <h3 class="font-bold text-[#004732] mb-1 md:mb-2 text-base md:text-lg">Gain de Temps</h3>
                         <p class="text-xs md:text-sm text-slate-700 leading-relaxed">Libérez-vous des contraintes pour piloter votre croissance.</p>
                     </div>
+                </div>
+
+                <!-- Points discrets issus du bandeau supprimé -->
+                <div class="mt-8 md:mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs md:text-sm text-[#004732]/70 font-medium">
+                    <span class="flex items-center gap-1.5"><span class="text-[#00a86b]">✓</span> Accompagnement 100% sur-mesure</span>
+                    <span class="flex items-center gap-1.5"><span class="text-[#00a86b]">✓</span> Conformité légale garantie</span>
+                    <span class="flex items-center gap-1.5"><span class="text-[#00a86b]">✓</span> Zéro retard de paie</span>
                 </div>
             </div>
         </section>
