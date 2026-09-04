@@ -6,6 +6,8 @@ import soRHLogo from '../assets/soRH.png';
 import background_section1 from '../assets/background_section1.jpg';
 import background_section2 from '../assets/background_section2.jpg';
 import background_section3 from '../assets/background_section3.jpeg';
+import silae_logo from '../assets/silae_logo.png'
+import carte_SoRH from '../assets/carte_soRh.png'
 ---
 
 <Layout title="SO RH EXPERT | Paie & Conseil RH Premium">
@@ -156,7 +158,7 @@ import background_section3 from '../assets/background_section3.jpeg';
                 <!-- Placeholder pour le logo Silae -->
                 <div class="flex justify-center mb-10 md:mb-12">
                     <div class="w-48 h-24 md:w-64 md:h-32 rounded-2xl border-2 border-dashed border-[#00a86b]/30 bg-[#f8faf9] flex items-center justify-center">
-                        <img src="" alt="Logo Silae" class="max-w-full max-h-full object-contain p-3" />
+                        <img src={silae_logo.src} alt="Logo Silae" class="max-w-full max-h-full object-contain p-3" />
                     </div>
                 </div>
 
@@ -284,34 +286,23 @@ import background_section3 from '../assets/background_section3.jpeg';
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                    <!-- Carte / Placeholder -->
+                    <!-- Carte / Image Réelle -->
+                    <!-- Carte / Image Réelle -->
                     <div class="order-2 md:order-1">
-                        <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-[#004732] to-[#00a86b] p-1 shadow-xl">
-                            <div class="w-full h-full rounded-[20px] bg-white flex items-center justify-center relative overflow-hidden">
-                                <!-- SVG abstrait du continent africain -->
-                                <svg viewBox="0 0 400 400" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="africaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#00a86b" stop-opacity="0.15"/>
-                                            <stop offset="100%" stop-color="#004732" stop-opacity="0.1"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <!-- Forme stylisée du continent -->
-                                    <path d="M200 60 C 240 60, 280 80, 290 120 C 300 160, 280 180, 290 210 C 300 240, 310 270, 290 300 C 270 330, 240 340, 210 340 C 180 340, 150 330, 130 300 C 110 270, 100 240, 110 210 C 120 180, 100 160, 110 120 C 120 80, 160 60, 200 60 Z"
-                                          fill="url(#africaGrad)" stroke="#00a86b" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
-                                    <!-- Points de présence -->
-                                    <circle cx="180" cy="200" r="8" fill="#FFBD59" class="animate-pulse"/>
-                                    <circle cx="180" cy="200" r="16" fill="#FFBD59" opacity="0.3"/>
-                                    <circle cx="220" cy="260" r="6" fill="#00a86b"/>
-                                    <circle cx="220" cy="260" r="12" fill="#00a86b" opacity="0.3"/>
-                                    <!-- Lignes de connexion -->
-                                    <line x1="180" y1="200" x2="220" y2="260" stroke="#FFBD59" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.5"/>
-                                </svg>
-                                <span class="absolute bottom-4 left-0 right-0 text-center text-xs md:text-sm text-[#004732]/50 font-bold uppercase tracking-widest">Carte de présence</span>
+                        <!-- Conteneur vertical (aspect-[3/4]) pour épouser le format de ta carte -->
+                        <div class="aspect-[3/4] rounded-3xl bg-gradient-to-br from-[#004732] to-[#00a86b] p-1 shadow-xl">
+                            <div class="w-full h-full rounded-[20px] bg-[#eef2f5] relative overflow-hidden flex items-center justify-center">
+
+                                <!-- Ton image avec object-contain pour qu'elle s'affiche en entier -->
+                                <img
+                                        src={carte_SoRH.src}
+                                        alt="Carte des implantations SO RH EXPERT en France et en Afrique"
+                                        class="w-full h-full object-contain p-4 md:p-6 drop-shadow-md"
+                                />
+
                             </div>
                         </div>
                     </div>
-
                     <!-- Texte et points forts -->
                     <div class="order-1 md:order-2 space-y-6">
                         <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-md border border-slate-100">
@@ -351,8 +342,7 @@ import background_section3 from '../assets/background_section3.jpeg';
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>            </div>
         </section>
 
         <!-- Séparation : transition vers le contact -->
