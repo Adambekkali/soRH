@@ -15,11 +15,11 @@ import carte_SoRH from '../assets/carte_soRh.png'
     <!-- NAVIGATION -->
     <nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-[#004732]/10 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center transition-all duration-300">
         <div class="flex items-center gap-2">
-            <a href="#home" class="block">
+            <a href="#home" class="block overflow-visible">
                 <img
                         src={soRHLogo.src}
                         alt="Logo SO RH EXPERT"
-                        class="h-16 md:h-28 w-auto object-contain -my-3 md:-my-4 transition-transform hover:scale-105"
+                        class="h-20 md:h-28 w-auto object-contain scale-150 md:scale-[1.8] origin-left ml-2 md:ml-4 transition-transform duration-300 hover:scale-[1.55] md:hover:scale-[1.85]"
                 />
             </a>
         </div>
@@ -36,7 +36,7 @@ import carte_SoRH from '../assets/carte_soRh.png'
         </div>
 
         <!-- Menu Mobile Icon -->
-        <button id="mobile-menu-toggle" aria-label="Ouvrir le menu" class="md:hidden text-[#004732] p-2 -mr-2 w-11 h-11 flex items-center justify-center">
+        <button id="mobile-menu-toggle" aria-label="Ouvrir le menu" class="md:hidden text-[#004732] p-2 -mr-2 w-11 h-11 flex items-center justify-center relative z-10">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
@@ -52,7 +52,6 @@ import carte_SoRH from '../assets/carte_soRh.png'
             <a href="#contact" class="block py-3 text-center bg-[#004732] text-white rounded-full mt-2 hover:bg-[#FFBD59] transition">Prendre rendez-vous</a>
         </div>
     </nav>
-
     <script>
         const toggle = document.getElementById('mobile-menu-toggle');
         const menu = document.getElementById('mobile-menu');
@@ -417,6 +416,13 @@ import carte_SoRH from '../assets/carte_soRh.png'
         <footer class="
             w-full bg-[#0a1f16] text-white/70 py-12 md:py-16 px-6
         ">
+    <center>
+            <img
+                    src={soRHLogo.src}
+                    alt="Logo SO RH EXPERT"
+                    class="h-100md:h-150 w-auto object-contain -my-3 md:-my-4 transition-transform hover:scale-105"
+            />
+    </center>
             <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
 
                 <div>
