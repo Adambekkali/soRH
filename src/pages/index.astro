@@ -100,29 +100,43 @@ import background_section3 from '../assets/background_section3.jpeg';
         </section>
 
         <!-- BANDEAU DE RÉASSURANCE : dégradé caméléon vers la section suivante -->
-        <div class="w-full bg-gradient-to-b from-white to-[#f8faf9] py-10 md:py-12 px-4">
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                <div class="flex items-center gap-3 bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a86b] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span class="text-[#004732] font-bold text-sm md:text-base">Accompagnement 100% sur-mesure</span>
+        <!-- BANDEAU DE RÉASSURANCE : Dégradé caméléon fondu sur l'image suivante -->
+        <div class="relative z-20 w-full bg-gradient-to-b from-white via-white to-white/0 pt-10 pb-16 px-4 -mb-16 pointer-events-none">
+
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 pointer-events-auto">
+
+                <!-- Carte 1 -->
+                <div class="flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white transition-transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-full bg-[#00a86b]/10 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a86b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="text-[#004732] font-bold text-sm md:text-base leading-tight">Accompagnement<br/><span class="font-medium text-slate-600">100% sur-mesure</span></span>
                 </div>
-                <div class="flex items-center gap-3 bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a86b] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span class="text-[#004732] font-bold text-sm md:text-base">Conformité légale garantie</span>
+
+                <!-- Carte 2 -->
+                <div class="flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white transition-transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-full bg-[#00a86b]/10 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a86b]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="text-[#004732] font-bold text-sm md:text-base leading-tight">Conformité légale<br/><span class="font-medium text-slate-600">garantie</span></span>
                 </div>
-                <div class="flex items-center gap-3 bg-white/70 backdrop-blur-md rounded-2xl p-5 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#00a86b] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    <span class="text-[#004732] font-bold text-sm md:text-base">Zéro retard de paie</span>
+
+                <!-- Carte 3 -->
+                <div class="flex items-center gap-4 bg-white/80 backdrop-blur-md rounded-2xl p-5 md:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white transition-transform hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-full bg-[#FFBD59]/15 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#FFBD59]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="text-[#004732] font-bold text-sm md:text-base leading-tight">Zéro retard<br/><span class="font-medium text-slate-600">de paie</span></span>
                 </div>
+
             </div>
         </div>
-
         <!-- SECTION 2 : POSITIONNEMENT -->
         <section id="positionnement" class="
             bg-center bg-cover bg-no-repeat relative scroll-mt-20

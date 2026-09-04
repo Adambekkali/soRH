@@ -52,7 +52,7 @@
         type="submit"
         class="w-full bg-[#00a86b] text-white font-bold py-4 rounded-xl hover:bg-[#004732] transition-colors shadow-lg shadow-[#00a86b]/20"
     >
-      Demander un devis
+      Demander un devis gratuit
     </button>
   </form>
 </template>
