@@ -139,12 +139,12 @@ const expertise = [
     fullTitle: "Gestion administrative des ressources humaines",
     shortDesc: "Une gestion fluide et maîtrisée de vos équipes.",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-    description: "Nous structurons et sécurisons votre organisation sociale pour vous libérer des contraintes RH.",
+    description: "Libérez-vous des contraintes RH : nous structurons et sécurisons votre organisation sociale pour vous permettre de vous consacrer pleinement au développement de votre activité.",
     points: [
-      "Rédaction des contrats de travail",
-      "DPAE (Déclaration Préalable)",
+      "Formalités d'embauche (contrat, DPAE...)",
       "Suivi administratif des salariés",
-      "Gestion rigoureuse des absences"
+      "Pilotage des absences en toute conformité",
+      "Gestion des dossiers du personnel"
     ]
   },
   {
