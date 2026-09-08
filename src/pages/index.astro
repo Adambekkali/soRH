@@ -59,6 +59,12 @@ import carte_SoRH from '../assets/carte_soRh.png'
             menu?.classList.toggle('hidden');
             menu?.classList.toggle('flex');
         });
+        document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+            link.addEventListener('click', () => {
+                window.dispatchEvent(new CustomEvent('close-expertise-modal'));
+            });
+        });
+
         menu?.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
                 menu?.classList.add('hidden');

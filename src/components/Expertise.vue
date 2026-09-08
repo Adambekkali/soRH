@@ -90,9 +90,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const selectedItem = ref(null);
+
+const onCloseRequest = () => {
+  if (selectedItem.value) closeModal();
+};
+
+onMounted(() => {
+  window.addEventListener('close-expertise-modal', onCloseRequest);
+});
+onUnmounted(() => {
+  window.removeEventListener('close-expertise-modal', onCloseRequest);
+});
 // NOUVEAU : Référence pour manipuler le scroll du carrousel
 const carousel = ref(null);
 
