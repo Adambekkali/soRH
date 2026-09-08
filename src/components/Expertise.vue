@@ -53,7 +53,7 @@
       <div v-if="selectedItem" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 text-left">
         <div class="absolute inset-0 bg-[#004732]/80 backdrop-blur-sm" @click="closeModal"></div>
 
-        <div class="bg-white rounded-3xl p-6 md:p-10 max-w-2xl w-full shadow-2xl relative z-10 overflow-y-auto max-h-[85vh] border-t-4 border-[#FFBD59] flex flex-col">
+        <div @click.stop class="bg-white rounded-3xl p-6 md:p-10 max-w-2xl w-full shadow-2xl relative z-10 overflow-y-auto max-h-[85vh] border-t-4 border-[#FFBD59] flex flex-col">
           <button @click="closeModal" class="absolute top-4 right-4 text-slate-400 hover:text-[#004732] bg-slate-100 hover:bg-slate-200 rounded-full w-10 h-10 md:w-8 md:h-8 flex items-center justify-center transition">✕</button>
 
           <div class="flex items-center gap-4 mb-6 pr-8 mt-2">
