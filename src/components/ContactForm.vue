@@ -39,6 +39,25 @@
       />
     </div>
 
+    <!-- Ligne 3 : Fonction + Nombre de salariés -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input
+          type="text"
+          name="fonction"
+          required
+          placeholder="Fonction occupée"
+          class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#00a86b] outline-none transition-all"
+      />
+      <input
+          type="number"
+          name="nombre-salaries"
+          required
+          min="1"
+          placeholder="Nombre de salariés"
+          class="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl focus:ring-2 focus:ring-[#00a86b] outline-none transition-all"
+      />
+    </div>
+
     <!-- Message -->
     <textarea
         name="message"

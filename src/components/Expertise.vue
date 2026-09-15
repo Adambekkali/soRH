@@ -1,9 +1,9 @@
 <template>
   <div class="w-full text-center relative z-10 px-4 md:px-0">
-    <h2 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-[#004732]">
+    <h2 data-reveal class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-[#004732]">
       Nos Services Clés
     </h2>
-    <p class="text-slate-800 font-medium mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
+    <p data-reveal class="text-slate-800 font-medium mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
       De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="bg-[#004E38] text-white px-3 py-1 rounded-lg shadow-sm whitespace-nowrap ml-1"><strong class="text-[#FFBD59] font-bold ">levier de performance.</strong></strong>
     </p>
 
@@ -15,6 +15,7 @@
             :key="index"
             @click="openModal(item)"
             class="w-[85vw] flex-shrink-0 snap-center md:w-auto p-8 rounded-3xl border border-slate-100 bg-white/95 backdrop-blur-md shadow-md hover:border-[#FFBD59] hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative h-auto"
+            data-reveal
         >
           <div class="text-[#00a86b] group-hover:text-[#FFBD59] mb-5 group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300" v-html="item.icon"></div>
           <h3 class="font-bold text-lg uppercase tracking-wider text-[#004732] mb-3">{{ item.title }}</h3>
@@ -169,6 +170,19 @@ const expertise = [
       "Mise en conformité légale",
       "Assistance en cas de contrôle URSSAF",
       "Conseil juridique personnalisé"
+    ]
+  },
+  {
+    title: "Logiciel Paie",
+    fullTitle: "Mise à disposition du logiciel de paie",
+    shortDesc: "Une solution annuelle pour piloter votre paie en autonomie, avec notre appui.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/><path d="M7 9h10"/><path d="M7 13h6"/></svg>`,
+    description: "Nous mettons à disposition le logiciel pour vous permettre de gérer votre paie en toute autonomie, tout en conservant un accompagnement expert.",
+    points: [
+      "Mise à disposition du logiciel",
+      "Autonomie du client sur sa gestion de paie",
+      "Formation incluse pour les clients qui souscrivent à cette offre annuelle",
+      "Support technique inclus"
     ]
   }
 ];
