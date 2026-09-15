@@ -19,7 +19,7 @@ const { title } = Astro.props;
 
 		<!-- PRELOADER -->
 		<div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white transition-opacity duration-500 opacity-100">
-			<img src={soRHLogo.src} alt="SO RH EXPERT" class="h-24 md:h-32 w-auto object-contain mb-8" />
+			<img src={soRHLogo.src} alt="SO-RH EXPERT" class="h-24 md:h-32 w-auto object-contain mb-8" />
 			<div class="animate-spin rounded-full border-4 border-[#00a86b] border-t-transparent w-16 h-16"></div>
 		</div>
 
@@ -45,4 +45,24 @@ const { title } = Astro.props;
 
 <style is:global>
 	/* Défilement vertical libre et fluide sur tous les supports. */
+	[data-reveal] {
+		opacity: 0;
+		transform: translateY(24px);
+		transition:
+			opacity 700ms ease,
+			transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	[data-reveal].is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		[data-reveal] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
 </style>
