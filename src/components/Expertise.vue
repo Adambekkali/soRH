@@ -4,7 +4,7 @@
       Nos Services Clés
     </h2>
     <p data-reveal class="text-slate-800 font-medium mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
-      De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="bg-[#004E38] text-white px-3 py-1 rounded-lg shadow-sm whitespace-nowrap ml-1"><strong class="text-[#FFBD59] font-bold ">levier de performance.</strong></strong>
+      De la gestion de la paie au conseil stratégique, nous transformons vos RH en <strong class="bg-[#FFBD59] text-white px-3 py-1 rounded-lg shadow-sm whitespace-nowrap ml-1"><strong class="text-[#004E38] font-bold ">levier de performance.</strong></strong>
     </p>
 
     <div class="relative">
@@ -14,6 +14,7 @@
             v-for="(item, index) in expertise"
             :key="index"
             @click="openModal(item)"
+            :class="{ 'md:col-start-2': index === 3 }"
             class="w-[85vw] flex-shrink-0 snap-center md:w-auto p-8 rounded-3xl border border-slate-100 bg-white/95 backdrop-blur-md shadow-md hover:border-[#FFBD59] hover:bg-white hover:shadow-xl transition-all duration-300 group flex flex-col items-center justify-center text-center cursor-pointer relative h-auto"
             data-reveal
         >
