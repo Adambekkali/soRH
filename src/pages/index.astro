@@ -84,7 +84,6 @@ import carte_SoRH from '../assets/carte_soRh.png'
             <!-- 1. Un seul filtre global propre (50% de blanc + léger flou) pour voir l'image sans bloquer la lecture -->
             <div class="absolute inset-0 bg-white/70 backdrop-blur-[2px] z-0"></div>
 
-            <!-- 2. Le texte est posé directement, sans boîte blanche qui coupe l'écran (et suppression de la classe 'bg-red') -->
             <div class="relative z-10 max-w-5xl mx-auto w-full">
                 <h1 data-reveal class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight text-[#004732] tracking-tight drop-shadow-sm">
                     Externalisation de la paie & conseil RH <br class="hidden lg:block"/>
@@ -92,7 +91,7 @@ import carte_SoRH from '../assets/carte_soRh.png'
                 </h1>
 
                 <p data-reveal class="text-lg md:text-xl text-slate-800 mb-10 md:mb-12 leading-relaxed max-w-3xl mx-auto font-medium px-2 drop-shadow-sm">
-                    <strong class="text-[#004732] font-bold">SO-RH EXPERT</strong> accompagne dirigeants, PME et structures en croissance dans une gestion sociale fiable, confidentielle et parfaitement maîtrisée.
+                    <strong class="text-[#004732] font-bold">SO-RH EXPERT</strong> accompagne dirigeants, PME/TPE et structures en croissance dans une gestion sociale fiable, confidentielle et parfaitement maîtrisée.
                 </p>
 
                 <!-- 3. Boutons avec un bel effet d'élévation au survol -->
@@ -430,6 +429,12 @@ import carte_SoRH from '../assets/carte_soRh.png'
         <footer class="
             w-full bg-[#0a1f16] text-white/70 py-8 md:py-10 px-6
         ">
+            <img
+                    src={soRHLogo.src}
+                    alt="so-rh expert"
+                    title="so-rh expert"
+                    class="h-20 md:h-28 w-auto object-contain scale-150 md:scale-[1.8] origin-left ml-2 md:ml-4 transition-transform duration-300 hover:scale-[1.55] md:hover:scale-[1.85]"
+            />
             <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
 
                 <div>
