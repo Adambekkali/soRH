@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Expertise from '../components/Expertise.vue';
 import ContactForm from '../components/ContactForm.vue';
 import soRHLogo from '../assets/soRH.png';
+import logoAumex from '../assets/logo-aumex.png';
 import background_section1 from '../assets/background_section1.jpg';
 import background_section2 from '../assets/background_section2.jpg';
 import background_section3 from '../assets/background_section3.jpeg';
@@ -427,15 +428,17 @@ import carte_SoRH from '../assets/carte_soRh.png'
 
         <!-- FOOTER : LÉGAL & SEO -->
         <footer class="
-            w-full bg-[#0a1f16] text-white/70 py-8 md:py-10 px-6
-        ">
+    w-full bg-[#0a1f16] text-white/70 py-8 md:py-10 px-6
+">
             <img
                     src={soRHLogo.src}
                     alt="so-rh expert"
                     title="so-rh expert"
                     class="h-20 md:h-28 w-auto object-contain scale-150 md:scale-[1.8] origin-left ml-2 md:ml-4 transition-transform duration-300 hover:scale-[1.55] md:hover:scale-[1.85]"
             />
-            <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+
+            <!-- Passage en grid-cols-3 pour intégrer le nouveau bloc -->
+            <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-8">
 
                 <div>
                     <p class="text-[11px] md:text-xs leading-relaxed text-white/60 font-light mb-3 md:mb-4">
@@ -461,6 +464,22 @@ import carte_SoRH from '../assets/carte_soRh.png'
                             <span class="text-white">N° RCS : 880 324 645 R.C.S. Paris (06/01/2020)</span><br/>
                             <span class="text-white">Inscription au RNE le 06/01/2020</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- NOUVEAU BLOC : Société Liée -->
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-[11px] md:text-xs mb-3 md:mb-4 border-b border-[#FFBD59]/30 pb-2 md:pb-3">Société liée</h4>
+                    <div class="flex flex-col gap-2">
+                        <!-- Le lien vers le site -->
+                        <a href="https://www.aumex.fr/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 mt-1 w-fit">
+                            <!-- Le Logo -->
+                            <img
+                                    src={logoAumex.src}
+                                    alt="Nom de la société"
+                                    class="h-20 md:h-24 w-auto object-contain bg-white/5 p-2 rounded-lg group-hover:bg-white/10 transition-colors"
+                            />
+                        </a>
                     </div>
                 </div>
 
