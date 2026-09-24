@@ -14,19 +14,19 @@ import carte_SoRH from '../assets/carte_soRh.png'
 <Layout title="SO-RH EXPERT | Paie & Conseil RH Premium">
 
     <!-- NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-[#004732]/10 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-[#004732]/10 px-4 min-[1080px]:px-6 py-3 min-[1080px]:py-4 flex justify-between items-center transition-all duration-300">
         <div class="flex items-center gap-2">
             <a href="#home" class="block overflow-visible">
                 <img
                         src={soRHLogo.src}
                         alt="so-rh expert"
                         title="so-rh expert"
-                        class="h-20 md:h-28 w-auto object-contain scale-150 md:scale-[1.8] origin-left ml-2 md:ml-4 transition-transform duration-300 hover:scale-[1.55] md:hover:scale-[1.85]"
+                        class="h-20 min-[1080px]:h-28 w-auto object-contain scale-150 min-[1080px]:scale-[1.8] origin-left ml-2 min-[1080px]:ml-4 transition-transform duration-300 hover:scale-[1.55] min-[1080px]:hover:scale-[1.85]"
                 />
             </a>
         </div>
 
-        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-[#004732]">
+        <div class="hidden min-[1080px]:flex gap-6 xl:gap-8 text-xs font-bold uppercase tracking-widest text-[#004732]">
             <a href="#positionnement" class="hover:text-[#00a86b] transition py-2">Notre Vision</a>
             <a href="#expertise" class="hover:text-[#00a86b] transition py-2">Services</a>
             <a href="#silae" class="hover:text-[#00a86b] transition py-2">Silae</a>
@@ -38,14 +38,14 @@ import carte_SoRH from '../assets/carte_soRh.png'
         </div>
 
         <!-- Menu Mobile Icon -->
-        <button id="mobile-menu-toggle" aria-label="Ouvrir le menu" class="md:hidden text-[#004732] p-2 -mr-2 w-11 h-11 flex items-center justify-center relative z-10">
+        <button id="mobile-menu-toggle" aria-label="Ouvrir le menu" class="min-[1080px]:hidden text-[#004732] p-2 -mr-2 w-11 h-11 flex items-center justify-center relative z-10">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </button>
 
         <!-- Menu Mobile déroulant -->
-        <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-[#004732]/10 shadow-lg hidden flex-col py-4 px-6 gap-1 text-[#004732] font-bold uppercase tracking-widest text-sm">
+        <div id="mobile-menu" class="min-[1080px]:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-[#004732]/10 shadow-lg hidden flex-col py-4 px-6 gap-1 text-[#004732] font-bold uppercase tracking-widest text-sm">
             <a href="#positionnement" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Notre Vision</a>
             <a href="#expertise" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Services</a>
             <a href="#silae" class="block py-3 border-b border-slate-100 hover:text-[#00a86b] transition">Silae</a>
@@ -447,24 +447,10 @@ import carte_SoRH from '../assets/carte_soRh.png'
                     <p class="text-[10px] text-white/40">© 2026 SO-RH EXPERT. Tous droits réservés.</p>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-bold tracking-widest uppercase text-[11px] md:text-xs mb-3 md:mb-4 border-b border-[#FFBD59]/30 pb-2 md:pb-3">Informations Juridiques</h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-[10px] md:text-xs">
-                        <div>
-                            <span class="text-white/40 block mb-0.5 md:mb-1">Société</span>
-                            <span class="font-medium text-white">SO-RH EXPERT</span><br/>
-                            <span class="text-white/60">SAS (Société par actions simplifiée)</span>
-                        </div>
-                        <div>
-                            <span class="text-white/40 block mb-0.5 md:mb-1">Numéro de TVA</span>
-                            <span class="text-white">FR52880324645</span>
-                        </div>
-                        <div class="col-span-1 sm:col-span-2">
-                            <span class="text-white/40 block mb-0.5 md:mb-1">Immatriculation</span>
-                            <span class="text-white">N° RCS : 880 324 645 R.C.S. Paris (06/01/2020)</span><br/>
-                            <span class="text-white">Inscription au RNE le 06/01/2020</span>
-                        </div>
-                    </div>
+                <div class="flex flex-col justify-end md:items-end">
+                    <p class="text-[11px] md:text-xs text-white/60">
+                        RCS Paris : 880 324 645
+                    </p>
                 </div>
 
                 <!-- NOUVEAU BLOC : Société Liée -->

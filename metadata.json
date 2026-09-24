@@ -1,0 +1,8 @@
+{
+  "name": "soRH",
+  "description": "Cabinet spécialisé dans l'externalisation de la paie et le conseil en ressources humaines pour TPE et PME.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
